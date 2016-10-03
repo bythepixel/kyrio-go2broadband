@@ -36,7 +36,7 @@ const compile = (_in, _out) => {
             log: !config.isProduction()
         }))
         .pipe(postcss(processors)) // Handle post processing of css
-        .pipe(gulpIf(config.isProduction(), minifyCss())) // Minify css if prod
+        .pipe(minifyCss()) // Minify css
         .pipe(gulp.dest(_out)) // Push to output directory
         .pipe(gulpIf(!config.isProduction(), browserSync.stream())) // Sync browsersync if not prod
 }
