@@ -1,0 +1,12 @@
+{
+  "asi"     : true,
+  "evil"    : false,
+  "newcap"  : true,
+  "noempty" : true,
+  "onevar"  : false,
+  "plusplus": false,
+  "trailing": true,
+  "white"   : false,
+  "esnext"  : true,
+  "indent"  : 4
+}
