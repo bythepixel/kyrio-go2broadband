@@ -9,9 +9,11 @@ import gulpIf from'gulp-if'
 import combineMQ from'gulp-merge-media-queries'
 import config from'../config'
 import chalk from'chalk'
+import flexibility from 'postcss-flexibility'
 
 const processors = [
-    autoprefixer({browsers: config.tasks.sass.support.browsers})
+    autoprefixer({browsers: config.tasks.sass.support.browsers}),
+    flexibility
 ];
 
 // Show the compression difference before and after minifying
