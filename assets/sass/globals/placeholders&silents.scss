@@ -1,0 +1,31 @@
+////////////////////////////
+// Placeholders & Silents //
+////////////////////////////
+
+// **
+// Standard clearfix
+// *
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// **
+// Truncate text with an ...
+// NOTE: Text needs a defined width in order to work
+// *
+%truncate-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// **
+// Show a click cursor
+// *
+%clickable {
+    cursor: pointer;
+}

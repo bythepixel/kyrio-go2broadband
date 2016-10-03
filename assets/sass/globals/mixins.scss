@@ -1,0 +1,105 @@
+////////////
+// Mixins //
+////////////
+
+// **
+// Breakpoints
+//
+// @params  $constraint  string
+//          $viewport1   int
+//          $viewport2   int     opt
+//
+// Quick writing of min, max, and min max breakpoints
+//
+// Usage: @include bp(min, 800) { @content };
+// Returns: @media screen and (min-width: 50ems) { @content };
+// *
+
+@mixin bp($constraint: min, $viewport1: null, $viewport2: null) {
+
+    // check if only one argument for constraint
+    @if length($constraint) < 2 {
+
+        // check if the arg is a number
+        @if type-of($constraint) == number {
+
+            // standardize the viewport number
+            $num: strip-unit($constraint);
+
+            // since we're building mobile-first treat
+            // the arg as a min-width value
+            @media screen and (min-width: $num + px) {
+                @content;
+            }
+        }
+
+        // if arg is not a number
+        @else {
+
+            // standardize the viewport number
+            $num: strip-unit($viewport1);
+
+            // output constraint as is and output
+            // num as pixels
+            @media screen and (#{nth($constraint, 1)}-width: $num + px) {
+                @content;
+            }
+        }
+    }
+
+    // if two arguments supplied for constraint
+    @else {
+
+        // standardize the viewport min / max nums
+        $num_1: strip-unit($viewport1);
+        $num_2: strip-unit($viewport2);
+
+        // output first constraint and first viewport num
+        // then output second after the 'and'
+        @media screen and (#{nth($constraint, 1)}-width: $num_1 + px) and (#{nth($constraint, 2)}-width: $num_2 + px) {
+            @content;
+        }
+    }
+}
+
+// **
+// Breakpoint Media Queries
+// *
+@mixin bp--xs {
+    @include bp(min, $bp--xs) {
+        @content;
+    }
+}
+
+@mixin bp--s {
+    @include bp(min, $bp--s) {
+        @content;
+    }
+}
+
+@mixin bp--m {
+    @include bp(min, $bp--m) {
+        @content;
+    }
+}
+
+@mixin bp--l {
+    @include bp(min, $bp--l) {
+        @content;
+    }
+}
+
+@mixin bp--xl {
+    @include bp(min, $bp--xl) {
+        @content;
+    }
+}
+
+// **
+// Retina Media Query
+// *
+@mixin retina {
+    @media screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+        @content;
+    }
+}

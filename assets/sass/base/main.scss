@@ -1,0 +1,30 @@
+//////////
+// Main //
+//////////
+
+html {
+    font-size: $defined-font-size;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    -webkit-text-size-adjust: 100%;
+    font-size: 1.2rem;
+    line-height: (18/12);
+    font-family: $font-standard;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    display: inline-block;
+}

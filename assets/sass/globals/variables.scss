@@ -1,0 +1,147 @@
+///////////////
+// Variables //
+///////////////
+
+// **
+// BASE KEYS AND MULTIPLIERS
+//
+// $defined-font-size set to 62.5% in _02-base/_01-main
+// results in 1.0 rem and em equalling 10px
+// *
+$defined-font-size: 62.5%;
+$base-font-size   : 1.6rem;
+$base-lineheight  : 1.5; // 16 * 1.5 = 24px
+
+// **
+// BORDERS
+// *
+$border-small: 1px;
+$border-med  : 0.6rem;
+$border-thick: 1.2rem;
+
+// **
+// COLORS
+// *
+$color-dark       : #272727;
+$color-dark-alt   : #222222;
+$color-med        : #626363;
+$color-light      : #D1D3D4;
+$color-white      : #FFFFFF;
+$color-black      : #000000;
+
+// **
+// COLUMNS
+// *
+
+// 12
+$col-1-12 : col_size(1, 12);
+$col-5-12 :	col_size(5, 12);
+$col-7-12 :	col_size(7, 12);
+$col-11-12:	col_size(11, 12);
+
+// 10
+$col-1-10: col_size(1, 10);
+$col-3-10: col_size(3, 10);
+$col-7-10: col_size(7, 10);
+$col-9-10: col_size(10, 10);
+
+// 8
+$col-1-8: col_size(1, 8);
+$col-3-8: col_size(3, 8);
+$col-5-8: col_size(5, 8);
+$col-7-8: col_size(7, 8);
+
+// 6
+$col-1-6: col_size(1, 6);
+$col-5-6: col_size(5, 6);
+
+// 5
+$col-1-5: col_size(1, 5);
+$col-2-5: col_size(2, 5);
+$col-3-5: col_size(3, 5);
+$col-4-5: col_size(4, 5);
+
+// 4
+$col-1-4: col_size(1, 4);
+$col-3-4: col_size(3, 4);
+
+// 3
+$col-1-3: col_size(1, 3);
+$col-2-3: col_size(2, 3);
+
+// 2
+$col-1-2: col_size(1, 2);
+
+
+// **
+// BREAKPOINTS
+// *
+$bp--xs : 450;
+$bp--s  : 600;
+$bp--m  : 800;
+$bp--l  : 1000;
+$bp--xl : 1200;
+
+
+// **
+// TRANSITIONS
+// *
+$transition-method: ease-in-out;
+
+$transition-fast: 0.20s $transition-method;
+$transition-reg : 0.35s $transition-method;
+$transition-slow: 0.50s $transition-method;
+
+// **
+// FONTS
+// *
+$font-standard: sans-serif;
+
+// **
+// SPEC CHARS
+//
+// Usage: content: 'Symbol ' $spec-char-mdash;
+// *
+$spec-char-space    : "\0020"; // space
+$spec-char-nbsp     : "\00a0"; // non-breaking space
+
+$spec-char-period   : "\002E"; // period
+$spec-char-comma    : "\002C"; // comma
+
+$spec-char-quot     : "\0022"; // quotation mark
+$spec-char-s-quot   : "\0027"; // single quotation mark
+$spec-char-lsquo    : "\2018"; // left single curly quote
+$spec-char-rsquo    : "\2019"; // right single curly quote
+$spec-char-ldquo    : "\201C"; // left double curly quote
+$spec-char-rdquo    : "\201D"; // right double curly quote
+$spec-char-lsaquo   : "\2039"; // left single angle quote (guillemet)
+$spec-char-rsaquo   : "\203A"; // right single angle quote (guillemet)
+$spec-char-laquo    : "\00ab"; // left double angle quote (guillemet)
+$spec-char-raquo    : "\00bb"; // right double angle quote (guillemet)
+
+$spec-char-mdash    : "\2014"; // em dash (mutton)
+$spec-char-ndash    : "\2013"; // en dash (nut)
+$spec-char-hyphen   : "\2010"; // hyphen
+
+$spec-char-slash    : "\002f"; // slash
+$spec-char-quest    : "\003F"; // question
+$spec-char-aster    : "\2217"; // asterisk
+
+$spec-char-amp      : "\0026"; // ampersand
+$spec-char-gt       : "\003e"; // greater than
+$spec-char-lt       : "\003c"; // less than
+$spec-char-times    : "\00D7"; // times
+$spec-char-bigtimes : "\2715"; // big times
+$spec-char-checkmark: "\2713"; // checkmark
+
+$spec-char-bull     : "\2022"; // bullet
+$spec-char-hellip   : "\2026"; // horizontal ellipsis
+
+$spec-char-utri     : "\25b2"; // up-pointing triangle
+$spec-char-dtri     : "\25bc"; // down-pointing triangle
+$spec-char-ltri     : "\25c0"; // left-pointing triangle
+$spec-char-rtri     : "\25b6"; // right-pointing triangle
+$spec-char-ustri    : "\25b4"; // up-pointing small triangle
+$spec-char-dstri    : "\25be"; // down-pointing small triangle
+$spec-char-lstri    : "\25c2"; // left-pointing small triangle
+$spec-char-rstri    : "\25b8"; // right-pointing small triangle
