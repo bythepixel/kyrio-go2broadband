@@ -26,7 +26,13 @@
 	<meta name="msapplication-TileImage" content="favicon/favicon-144.png">
 	<meta name="msapplication-config" content="favicon/browserconfig.xml">
   <body>
-      <header class="page__header overlay" style="background-image: url('media/background-1.jpg');">
+      <header class="page__header overlay">
+        <div class="overlay__media">
+            <video playsinline autoplay muted loop poster="media/background-1.jpg" id="bgvid" class="media__video">
+                <source src="media/videos/HeroBG.webm" type="video/webm">
+                <source src="media/videos/HeroBG.mp4" type="video/mp4">
+            </video>
+        </div>
         <nav class="row row--wide nav nav--main">
             <div class="nav__brand">
                 <img src="media/go2-broadband-logo.png" width="312" alt="Kyrio - GO2Broadband">

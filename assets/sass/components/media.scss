@@ -1,0 +1,22 @@
+///////////
+// Media //
+///////////
+
+.media__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.7%;
+    min-height: 100%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background: url(../media/background-1.jpg) no-repeat;
+    background-size: cover;
+
+    @include bp(1400) {
+        min-width: 100%;
+        min-height: 100%;
+        height: auto;
+        width: auto;
+    }
+}
