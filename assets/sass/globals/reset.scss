@@ -64,6 +64,10 @@ hr {
     clear:both;
 }
 
+input, button, select, textarea {
+    margin: 0;
+}
+
 input, select {
     vertical-align:middle;
 }

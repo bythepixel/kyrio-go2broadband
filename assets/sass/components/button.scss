@@ -12,6 +12,7 @@
     color: $color-light;
     transition: background 0.3s;
     cursor: pointer;
+    line-height: 1.2;
     
     @include bp--m {
         font-size: 3.0rem;
@@ -28,7 +29,7 @@
         text-align: center;
         
         @include bp--m {
-            padding: 1.2rem 1.2rem 1.3rem;
+            padding: 1.2rem;
         }
     }
 }
