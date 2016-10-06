@@ -4,11 +4,7 @@
 
 .row {
     @include max-width();
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    @extend %clearfix;
 
     &--reverse {}
     
@@ -31,9 +27,8 @@
 
     @include bp--m {
         .column--m {
-            flex-grow: 1;
-            flex-shrink: 0;
-            flex-basis: auto;
+            display: inline-block;
+            float: left;
 
             &-1-2 {
                 width: 50%;

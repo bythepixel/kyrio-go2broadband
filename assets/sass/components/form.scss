@@ -3,20 +3,27 @@
 //////////
 
 .form {
-    &--condensed {}
+    max-width: 43rem;
+    margin-left: auto;
+    margin-right: auto;
+    
     @include bp--m {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
         &.row {
             flex-wrap: nowrap;
         }
 
-        > .column + .column {
-            margin-left: 0.1rem;
+        .column + .column {
+            padding-left: 1px;
         }
     }
 }
 
 .form__row {
     position: relative;
+    margin-bottom: 1px;
 }
 
 .form__input,
@@ -39,7 +46,7 @@
     padding: 1.2rem;
     border: 0;
     outline: 0;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0;
     font-family: $font-standard;
     
     @include bp--m {
@@ -52,6 +59,8 @@
 }
 
 .form__group {
+    display: table-row;
+    
     &.row {
         flex-wrap: nowrap;
         align-items: stretch;
@@ -60,6 +69,8 @@
 
 .form__group .group__item {
     color: $color-light;
+    display: table-cell;
+    vertical-align: top;
 
     &--checkbox {
         height: 4.4rem;
@@ -72,8 +83,8 @@
         }
     }
 
-    + .group__item {
-        margin-left: 0.1rem;
+    &--button .button {
+        margin-left: 1px
     }
 }
 
@@ -86,7 +97,7 @@
     padding: 1.0rem 1.1rem 1.2rem;
     
     @include bp--m {
-        padding: 1.8rem;
+        padding: 1.7rem 1.8rem 1.8rem;
     }
 }
 
@@ -96,6 +107,7 @@
     display: block;
     top: 1.2rem;
     left: 1.2rem;
+    transition: top 0.1s, left 0.1s;
     
     @include bp--m {
         top: 1.8rem;
@@ -110,6 +122,7 @@
     font-size: 1.2rem;
     top: 0.2rem;
     left: 0.4rem;
+    transform: translateZ(0);
 }
 
 .form__checkbox {
@@ -219,7 +232,7 @@ select[data-ss-uuid] {
     }
 
     .ss-dropdown {
-        top: 100%;
+        top: calc(100% + 1px);
         left: 0;
         position: absolute;
         width: 100%;
@@ -233,6 +246,7 @@ select[data-ss-uuid] {
             width: 100%;
             transform: translateZ(0);
             transition: background-color 0.3s, color 0.3s;
+            margin-bottom: 1px;
             
             &.highlighted {
                 background-color: $color-teal;

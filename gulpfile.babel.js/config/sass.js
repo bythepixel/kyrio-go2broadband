@@ -9,7 +9,7 @@ export default {
     support: {
         // Autoprefixer config to automatically match
         // browser support following these rules
-        browsers: ["> 5%", "last 3 versions"],
+        browsers: ["> 5%", "last 3 versions", "ie >= 9"],
         config : {
             // Sass dev output rules
             dev : {

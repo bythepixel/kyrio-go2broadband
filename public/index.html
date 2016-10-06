@@ -188,29 +188,30 @@
           <header class="row row--wide section__header section__header--align-left">
               <h2 class="section__title">Questions?</h2>
           </header>
-          <form action="" class="row row--wide form">
-              <div class="column column--m-2-5">
-                  <div class="form__row">
-                      <input type="text" name class="form__input">
-                      <label for="name" class="form__label">Name</label>
+          <form action="" class="form">
+              <div class="row row--wide">
+                  <div class="column column--m column--m-2-5">
+                      <div class="form__row">
+                          <input type="text" name class="form__input">
+                          <label for="name" class="form__label">Name</label>
+                      </div>
+                      <div class="form__row">
+                          <input type="email" name="email" class="form__input">
+                          <label for="email" class="form__label">Email</label>
+                      </div>
+                      <div class="form__row">
+                          <input type="text" name="captcha" class="form__input">
+                          <label for="captcha" class="form__label">2 + 10 = ?</label>
+                      </div>
                   </div>
-                  <div class="form__row">
-                      <input type="email" name="email" class="form__input">
-                      <label for="email" class="form__label">Email</label>
-                  </div>
-                  <div class="form__row">
-                      <input type="text" name="captcha" class="form__input">
-                      <label for="captcha" class="form__label">2 + 10 = ?</label>
+                  <div class="column column--m column--m-3-5">
+                      <div class="form__row">
+                          <textarea name="text" id="text" class="form__textarea"></textarea>
+                          <label for="text" class="form__label">Message</label>
+                      </div>
+                      <button class="button button--full-width form__button">Send</button>
                   </div>
               </div>
-              <div class="column column--m-3-5">
-                  <div class="form__row">
-                      <textarea name="text" id="text" class="form__textarea"></textarea>
-                      <label for="text" class="form__label">Message</label>
-                  </div>
-                  <button class="button button--full-width form__button">Send</button>
-              </div>
-              
           </form>
           <footer class="section__footer">
               <p>Powered by</p>
