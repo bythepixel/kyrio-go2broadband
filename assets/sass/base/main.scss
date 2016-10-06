@@ -15,10 +15,20 @@ body {
     position: relative;
     -webkit-text-size-adjust: 100%;
     font-size: 1.2rem;
-    line-height: (18/12);
+    line-height: $base-lineheight;
     font-family: $font-standard;
     overflow-x: hidden;
     overflow-y: scroll;
+
+    @include bp--m {
+        font-size: $base-font-size;
+    }
+    
+    > header,
+    > section {
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+    }
 }
 
 p:last-child {

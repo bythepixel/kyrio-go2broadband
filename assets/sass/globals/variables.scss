@@ -8,9 +8,9 @@
 // $defined-font-size set to 62.5% in _02-base/_01-main
 // results in 1.0 rem and em equalling 10px
 // *
-$defined-font-size: 62.5%;
-$base-font-size   : 1.6rem;
-$base-lineheight  : 1.5; // 16 * 1.5 = 24px
+$defined-font-size : 62.5%;
+$base-font-size    : 1.6rem;
+$base-lineheight   : 1.2;
 
 // **
 // BORDERS
@@ -22,12 +22,18 @@ $border-thick: 1.2rem;
 // **
 // COLORS
 // *
-$color-dark       : #272727;
+$color-dark       : #0C0C0C;
 $color-dark-alt   : #222222;
-$color-med        : #626363;
-$color-light      : #D1D3D4;
+$color-med        : #a5a4a3;
+$color-light      : #F2F2F2;
 $color-white      : #FFFFFF;
 $color-black      : #000000;
+
+$color-blue      : #1F485B;
+$color-light-blue: #577282;
+$color-teal      : #03A5A5;
+$color-orange    : #F2A74B;
+$color-red       : #D81E1E;
 
 // **
 // COLUMNS
@@ -95,7 +101,9 @@ $transition-slow: 0.50s $transition-method;
 // **
 // FONTS
 // *
-$font-standard: sans-serif;
+$font-standard: 'ProximaNova', sans-serif;
+$font-heading : 'ArgentCF', sans-serif;
+$font-emph    : 'Realtime', sans-serif;
 
 // **
 // SPEC CHARS

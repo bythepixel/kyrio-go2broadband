@@ -1,3 +1,77 @@
 ///////////
 // Badge //
 ///////////
+
+.badge__collection {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 1.8rem;
+    
+    img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    @include bp--l {
+        padding-top: 0;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+.badge {
+    width: 100%;
+    text-align: center;
+    max-width: 13.6rem;
+    
+    @include bp--s {
+        max-width: 16rem;
+    }
+    
+    @include bp--m {
+        max-width: 18.2rem;
+    }
+    
+    @include bp--l {
+        max-width: 21%;
+    }
+}
+
+.badge__divider {
+    padding: 2.4rem 0;
+    
+    .badge__divider--horiz {
+        display: none;
+    }
+    
+    .badge__divider--vert {
+        width: 75%;
+    }
+    
+    @include bp--l {
+        width: 11%;
+        padding-top: 4.2rem;
+        
+        .badge__divider--horiz {
+            display: block;
+        }
+        .badge__divider--vert {
+            display: none;
+        }
+    }
+}
+
+.badge__media {
+    padding: 0 1.8rem;
+    margin-bottom: 0.6rem;
+    
+    @include bp--l {
+        padding: 0;
+        height: 14.4rem;
+        margin-bottom: 1.2rem;
+    }
+}

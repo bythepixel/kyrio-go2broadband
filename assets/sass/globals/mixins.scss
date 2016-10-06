@@ -103,3 +103,14 @@
         @content;
     }
 }
+
+@mixin max-width($wide: false) {
+    @if $wide {
+        max-width: 121.2rem;
+    }
+    @else {
+        max-width: 104.0rem;
+    }
+    margin-left: auto;
+    margin-right: auto;
+}

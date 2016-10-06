@@ -1,0 +1,16 @@
+/////////////
+// Overlay //
+/////////////
+
+.overlay {
+    background-size: cover;
+    background-position: center center;
+}
+
+.overlay .section__header {
+    color: $color-light;
+}
+
+.overlay .section__title .title--emph {
+    color: $color-light;
+}
