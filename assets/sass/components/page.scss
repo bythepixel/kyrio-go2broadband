@@ -1,0 +1,119 @@
+//////////
+// Page //
+//////////
+
+.page__header {
+    padding-bottom: 2.4rem;
+    
+    @include bp--l {
+        padding-bottom: 12.4rem;
+    }
+
+    > .row {
+        @include bp--l {
+            flex-wrap: nowrap;
+        }
+    }
+    
+    .header__container {
+        max-width: 43rem;
+        
+        @include bp--m {
+            max-width: 100%;
+        }
+        
+        @include bp--l {
+            max-width: 104rem;
+        }
+    }
+
+    .header__content {
+        color: $color-light;
+        
+        p {
+            font-size: 1.6rem;
+            margin-bottom: 2.0rem;
+            
+            @include bp--l {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @include bp--m {
+            padding-right: 4.8rem;
+        }
+        
+        @include bp--l {
+            padding-right: 7.2rem;
+        }
+    }
+    
+    .form {
+        @include bp--l {
+            padding-top: 1.8rem;
+            padding-left: 1.8rem;
+            padding-right: 0.6rem;
+        }
+    }
+}
+
+.page__section {
+    padding: 3.6rem 0 5.4rem;
+    background: $color-white;
+    
+    @include bp--l {
+        padding: 12.4rem 0 16.4rem;
+    }
+    
+    .section__header {
+        color: $color-light-blue;
+        padding: 0 3.0rem;
+        padding-bottom: 3.0rem;
+        
+        @include bp--l {
+            padding-bottom: 7.5rem;
+        }
+    }
+    
+    &--grid {
+        padding-top: 3.9rem;
+        padding-bottom: 4.8rem;
+        
+        @include bp--l {
+            padding-bottom: 9.0rem;
+        }
+    }
+    
+    &--form {
+        @include bp--l {
+            padding-top: 8.4rem;
+            padding-bottom: 9.0rem;
+        }
+        
+        .form,
+        .section__footer {
+            padding-right: 2.4rem;
+            padding-left: 2.4rem;
+        }
+        
+        .form {
+            margin-bottom: 2.4rem;
+        }
+        
+        .section__header {
+            padding-bottom: 1.8rem;
+            
+            @include bp--l {
+                padding-bottom: 3.2rem;
+            }
+        }
+        
+        .section__footer {
+            font-size: 1.0rem;
+            
+            @include bp--m {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

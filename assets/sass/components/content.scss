@@ -1,0 +1,49 @@
+/////////////
+// Content //
+/////////////
+
+.page__section .section__header {
+    text-align: center;
+}
+
+.page__section--form {
+    
+    .form {
+        @include bp--l {
+            padding-bottom: 8.7rem;
+        }
+    }
+    
+    .section__footer,
+    .section__footer a {
+        color: white;
+    }
+    
+    .section__footer {
+        color: white;
+        
+        p {
+            display: block;
+            margin-bottom: 0.3rem;
+            
+            @include bp--m {
+                margin-bottom: 0.9rem;
+            }
+        }
+        
+        .footer__brand {
+            max-width: 13.6rem;
+            margin-bottom: 3.0rem;
+            @include bp--l {
+                max-width: 21.2rem;
+                margin-bottom: 4.2rem;
+            }
+        }
+        
+        @include bp--xl {
+            @include max-width(true);
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

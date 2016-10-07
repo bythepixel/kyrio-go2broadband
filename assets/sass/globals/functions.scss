@@ -1,0 +1,34 @@
+///////////////
+// Functions //
+///////////////
+
+// **
+// STRIP-UNIT
+// Remove the unit of measure from $value
+//
+// @params  $value  string
+//
+// Usage: strip-unit(72px);
+// Returns: 72
+// *
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+
+// **
+// COL_SIZE
+// Calculation of percentage width
+// for column use
+//
+// @params  $span      int
+//          $col_size  int
+//
+// Usage: col_size(2,3);
+// Returns: 66.67%;
+// *
+
+@function col_size($span, $col_size) {
+    @return $span / $col_size * 100%;
+}

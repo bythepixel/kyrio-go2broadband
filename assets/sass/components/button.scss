@@ -1,0 +1,35 @@
+////////////
+// Button //
+////////////
+
+.button {
+    outline: none;
+    border: 0;
+    background: $color-orange;
+    font-family: $font-emph;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: $color-light;
+    transition: background 0.3s;
+    cursor: pointer;
+    line-height: 1.2;
+    
+    @include bp--m {
+        font-size: 3.0rem;
+    }
+    
+    &:hover {
+        transform: translateZ(0);
+        background: darken($color-orange, 8%);
+    }
+    
+    &--full-width {
+        padding: 0.6rem 1.1rem;
+        width: 100%;
+        text-align: center;
+        
+        @include bp--m {
+            padding: 1.2rem;
+        }
+    }
+}

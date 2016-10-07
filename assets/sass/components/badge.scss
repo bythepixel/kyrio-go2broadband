@@ -1,0 +1,100 @@
+///////////
+// Badge //
+///////////
+
+.badge__collection {
+    @extend %clearfix;
+    padding-top: 1.8rem;
+    text-align: center;
+    
+    img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    @include bp--l {
+        padding-top: 0;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+.badge {
+    width: 100%;
+    display: block;
+    text-align: center;
+    
+    @include bp--m {
+        max-width: 18.2rem;
+    }
+    
+    @include bp--l {
+        max-width: 21%;
+    }
+}
+
+.badge__divider {
+    padding: 2.4rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    
+    .badge__divider--horiz {
+        display: none;
+    }
+    
+    .badge__divider--vert {
+        width: 4.8rem;
+    }
+    
+    @include bp--m {
+        width: 8%;
+        padding-top: 3.6rem;
+        
+        .badge__divider--horiz {
+            display: block;
+        }
+        .badge__divider--vert {
+            display: none;
+        }
+    }
+}
+
+@include bp--m {
+    .badge,
+    .badge__divider {
+        display: inline-block;
+        vertical-align: text-top;
+    }
+}
+
+.badge__content {
+    max-width: 13.6rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include bp--s {
+        max-width: 16rem;
+    }
+    
+    @include bp--m {
+        max-width: 18.2rem;
+    }
+}
+
+.badge__media {
+    padding: 0 1.8rem;
+    margin-bottom: 0.6rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include bp--l {
+        padding: 0;
+        height: 14.4rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    img {
+        max-height: 14.4rem;
+    }
+}

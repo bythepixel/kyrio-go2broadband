@@ -1,0 +1,274 @@
+//////////
+// Form //
+//////////
+
+.form {
+    max-width: 43rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include bp--m {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+
+        &.row {
+            flex-wrap: nowrap;
+        }
+
+        .column + .column {
+            padding-left: 1px;
+        }
+    }
+}
+
+.form__row {
+    position: relative;
+    margin-bottom: 1px;
+}
+
+.form__input,
+.form__label,
+.form__textarea,
+.style-select {
+    @include bp--m {
+        font-size: 2.0rem;
+    }
+}
+
+.form__input,
+.form__select,
+.form__textarea,
+.style-select .ss-selected-option,
+.style-select .ss-option {
+    display: block;
+    width: 100%;
+    background: $color-light;
+    padding: 1.2rem;
+    border: 0;
+    outline: 0;
+    margin-bottom: 0;
+    font-family: $font-standard;
+    
+    @include bp--m {
+        padding: 1.8rem;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.form__group {
+    display: table-row;
+    
+    &.row {
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+}
+
+.form__group .group__item {
+    color: $color-light;
+    display: table-cell;
+    vertical-align: top;
+
+    &--checkbox {
+        height: 4.4rem;
+        background: $color-blue;
+        position: relative;
+        width: 100%;
+        
+        @include bp--m {
+            height: 7.1rem;
+        }
+    }
+
+    &--button .button {
+        margin-left: 1px
+    }
+}
+
+.form__input {}
+.form__textarea {
+    min-height: 12.1rem;
+}
+
+.form__button {
+    padding: 1.0rem 1.1rem 1.2rem;
+    
+    @include bp--m {
+        padding: 1.7rem 1.8rem 1.8rem;
+    }
+}
+
+.form__label {
+    color: $color-med;
+    position: absolute;
+    display: block;
+    top: 1.2rem;
+    left: 1.2rem;
+    transition: top 0.1s, left 0.1s;
+    
+    @include bp--m {
+        top: 1.8rem;
+        left: 1.8rem;
+    }
+}
+
+.form__input.form__has-value + .form__label,
+.form__textarea.form__has-value + .form__label,
+.form__input:focus + .form__label,
+.form__textarea:focus + .form__label {
+    font-size: 1.2rem;
+    top: 0.2rem;
+    left: 0.4rem;
+    transform: translateZ(0);
+}
+
+.form__checkbox {
+    display: none;
+    
+    + .form__label {
+        color: $color-light;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        font-size: 1.0rem;
+        padding-left: 3.0rem;
+        padding-right: 2.4rem;
+        transform: translate(0, -50%);
+        
+        @include bp--m {
+            font-size: 1.6rem;
+            padding-left: 4.8rem;
+        }
+        
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0.8rem;
+            padding: 0.5rem;
+            background: $color-light;
+            transform: translate(0, -50%);
+            z-index: 1;
+            
+            @include bp--m {
+                left: 1.6rem;
+                padding: 0.9rem;
+                border-radius: 0.2rem;
+            }
+        }
+        
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 1.0rem;
+            padding: 0.3rem;
+            background: $color-teal;
+            transform: translate(0, -50%);
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.3s;
+            
+            @include bp--m {
+                left: 1.9rem;
+                padding: 0.6rem;
+                border-radius: 0.1rem;
+            }
+        }
+    }
+    
+    &:checked + .form__label:after {
+        transform: translate(0, -50%) translateZ(0);
+        opacity: 1;
+    }
+}
+
+// **
+// Custom Selects
+// *
+
+select[data-ss-uuid] {
+    display: none;
+    pointer-events: none;
+}
+
+.style-select {
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+
+    &,
+    * {
+        cursor: pointer;
+    }
+
+    .ss-selected-option {
+        width: 100%;
+        
+        &:after {
+            content: "▾";
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            display: block;
+            color: $color-dark;
+            transform: translateZ(0);
+            transition: transform 0.3s;
+            
+            @include bp--m {
+                top: 1.8rem;
+                right: 1.8rem;
+            }
+        }
+    }
+
+    .ss-dropdown {
+        top: calc(100% + 1px);
+        left: 0;
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        display: block;
+        pointer-events: none;
+        border: 0;
+        transition: opacity 0.3s;
+
+        .ss-option {
+            width: 100%;
+            transform: translateZ(0);
+            transition: background-color 0.3s, color 0.3s;
+            margin-bottom: 1px;
+            
+            &.highlighted {
+                background-color: $color-teal;
+                color: $color-light;
+            }
+
+            &.ticked {
+                background-color: $color-blue;
+                color: $color-light;
+            }
+        }
+    }
+    
+    &.open {
+        .ss-dropdown {
+            pointer-events: auto;
+            transform: translateZ(0);
+            opacity: 1;
+        }
+
+        .ss-selected-option::after {
+            transform: rotateX(-180deg) translateZ(0);;
+        }
+    }
+}

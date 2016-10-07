@@ -1,0 +1,42 @@
+///////////////
+// Font-Face //
+///////////////
+
+// This font directory is relative to the output css
+$fontDir: "../fonts";
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('#{$fontDir}/proximanova/proximanova-reg.woff2') format('woff2'),
+         url('#{$fontDir}/proximanova/proximanova-reg.woff') format('woff'),
+         url('#{$fontDir}/proximanova/proximanova-reg.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ArgentCF';
+    src: url('#{$fontDir}/argentcf/argentcf-thinitalic.woff2') format('woff2'),
+         url('#{$fontDir}/argentcf/argentcf-thinitalic.woff') format('woff'),
+         url('#{$fontDir}/argentcf/argentcf-thinitalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Realtime';
+    src: url('#{$fontDir}/realtime/realtime-semibold.woff2') format('woff2'),
+         url('#{$fontDir}/realtime/realtime-semibold.woff') format('woff'),
+         url('#{$fontDir}/realtime/realtime-semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Realtime';
+    src: url('#{$fontDir}/realtime/realtime-bold.woff2') format('woff2'),
+         url('#{$fontDir}/realtime/realtime-bold.woff') format('woff'),
+         url('#{$fontDir}/realtime/realtime-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}

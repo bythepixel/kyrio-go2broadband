@@ -2,7 +2,226 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kyrio GO2Broadband</title>
-  </head>
-  <body></body>
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="favicon/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="favicon/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="favicon/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="favicon/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16.png">
+	<link rel="apple-touch-icon" href="favicon/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="favicon/favicon-144.png">
+	<meta name="msapplication-config" content="favicon/browserconfig.xml">
+  <body>
+      <header class="page__header overlay">
+        <div class="overlay__media">
+            <video playsinline autoplay muted loop poster="media/background-1.jpg" id="bgvid" class="media__video">
+                <source src="media/videos/HeroBG.webm" type="video/webm">
+                <source src="media/videos/HeroBG.mp4" type="video/mp4">
+            </video>
+        </div>
+        <nav class="row row--wide nav nav--main">
+            <div class="nav__brand">
+                <img src="media/go2-broadband-logo.png" width="312" alt="Kyrio - GO2Broadband">
+                <p>Cable Service Locator</p>
+            </div>
+        </nav>
+        <div class="row header__container">
+            <div class="header__content column column--m column--m-1-2">
+                <h1 class="page__title">Shop for <span class="color--orange">broadband</span> <br>cable services in your area.</h1>
+                <p>See plans, prices, and schedule your service.</p>
+            </div>
+            <div class="column column--m column--m-1-2">
+                <form action="" class="form">
+                    <div class="row form__row">
+                        <input type="text" class="form__input" name="address_1" id="address_1">
+                        <label for="address_1" class="form__label">Enter your street address</label>
+                    </div>
+                    <div class="row form__row">
+                        <input type="text" class="form__input" name="address_2" id="address_2">
+                        <label for="address_2" class="form__label">Address line 2</label>
+                    </div>
+                    <div class="row form__row">
+                        <input type="text" class="form__input" name="zip" id="zip">
+                        <label for="zip" class="form__label">Zip code</label>
+                    </div>
+                    <div class="row form__row">
+                        <select name="services" id="services" class="form__select">
+                            <option value="all">All Cable Services</option>
+                            <option value="some">Some Cable Services</option>
+                            <option value="none">No Cable Services</option>
+                        </select>
+                    </div>
+                    <div class="form__row">
+                        <div class="row form__group">
+                            <div class="group__item group__item--checkbox">
+                                <input type="checkbox" class="form__checkbox" name="opt-in" id="opt-in">
+                                <label for="opt-in" class="form__label">I would like to receive special offers and updates from my cable company.</label>
+                            </div>
+                            <div class="group__item group__item--button">
+                                <button class="button form__button form__buttom--square">Go</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </header>
+      <section class="page__section">
+          <header class="section__header">
+              <h2 class="section__title">Get Connected. <span class="title--emph">Faster</span></h2>
+          </header>
+          <section class="row section__content badge__collection">
+              <div class="badge">
+                  <div class="badge__media">
+                      <img src="media/search-graphic.png" alt="">
+                  </div>
+                  <header class="badge__header">
+                      <h3 class="badge__title">Search</h3>
+                  </header>
+                  <section class="badge__content">
+                      <p>Enter your address and zip code to find the cable provider that service your area.</p>
+                  </section>
+              </div>
+
+              <div class="badge__divider">
+                  <img class="badge__divider--horiz" src="media/badge-divider-horiz.png">
+                  <img class="badge__divider--vert"src="media/badge-divider-vert.png">
+              </div>
+              
+              <div class="badge">
+                  <div class="badge__media">
+                      <img src="media/setup-graphic.png" alt="">
+                  </div>
+                  <header class="badge__header">
+                      <h3 class="badge__title">Setup</h3>
+                  </header>
+                  <section class="badge__content">
+                      <p>Compare plans and choose the one that fits your needs.</p>
+                  </section>
+              </div>
+
+              <div class="badge__divider">
+                  <img class="badge__divider--horiz" src="media/badge-divider-horiz.png">
+                  <img class="badge__divider--vert"src="media/badge-divider-vert.png">
+              </div>
+
+              <div class="badge">
+                  <div class="badge__media">
+                      <img src="media/schedule-graphic.png" alt="">
+                  </div>
+                  <header class="badge__header">
+                      <h3 class="badge__title">Schedule</h3>
+                  </header>
+                  <section class="badge__content">
+                      <p>Select the date and time you’d like to schedule your installation.</p>
+                  </section>
+              </div>
+          </section>
+      </section>
+      <section class="page__section overlay page__section--grid" style="background-image: url('media/background-2.jpg');">
+          <header class="section__header">
+              <h2 class="section__title">Every Cable Provider, <span class="title--emph">One Search</span></h2>
+          </header>
+          <section class="row row--wide grid">
+              <div class="grid__item">
+                  <img src="media/providers/cox-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/sudden-link-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/xfinity-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/bright-house-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/time-warner-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/metro-cast-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/cable-one-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/bend-broadband-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/armstrong-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/mctv-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/optimum-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/midco-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/atlantic-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/charter-logo.png" class="grid__media">
+              </div>
+              <div class="grid__item">
+                  <img src="media/providers/mediacom-logo.png" class="grid__media">
+              </div>
+          </section>
+      </section>
+      <section class="page__section overlay page__section--form" style="background-image: url('media/background-3.jpg');">
+          <header class="row row--wide section__header section__header--align-left">
+              <h2 class="section__title">Questions?</h2>
+          </header>
+          <form action="" class="form">
+              <div class="row row--wide">
+                  <div class="column column--m column--m-2-5">
+                      <div class="form__row">
+                          <input type="text" name class="form__input">
+                          <label for="name" class="form__label">Name</label>
+                      </div>
+                      <div class="form__row">
+                          <input type="email" name="email" class="form__input">
+                          <label for="email" class="form__label">Email</label>
+                      </div>
+                      <div class="form__row">
+                          <input type="text" name="captcha" class="form__input">
+                          <label for="captcha" class="form__label">2 + 10 = ?</label>
+                      </div>
+                  </div>
+                  <div class="column column--m column--m-3-5">
+                      <div class="form__row">
+                          <textarea name="text" id="text" class="form__textarea"></textarea>
+                          <label for="text" class="form__label">Message</label>
+                      </div>
+                      <button class="button button--full-width form__button">Send</button>
+                  </div>
+              </div>
+          </form>
+          <footer class="section__footer">
+              <p>Powered by</p>
+              <div class="footer__brand">
+                  <img src="media/kyrio-logo.png" width="212" alt="Kyrio - GO2Broadband">
+              </div>
+              <p>Copyright Kyrio(TM), Inc. 2016. All rights reserved.</p>
+              <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+          </footer>
+      </section>
+      <script src="js/app.js" charset="utf-8"></script>
+  </body>
 </html>

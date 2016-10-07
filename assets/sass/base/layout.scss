@@ -1,0 +1,60 @@
+////////////
+// Layout //
+////////////
+
+.row {
+    @include max-width();
+    @extend %clearfix;
+
+    &--wide {
+        @include max-width(true);
+    }
+
+    .column {
+        display: block;
+        width: 100%;
+    }
+
+    @include bp--s {
+        .column--s {
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: auto;
+        }
+    }
+
+    @include bp--m {
+        .column--m {
+            display: inline-block;
+            float: left;
+
+            &-1-2 {
+                width: 50%;
+            }
+            
+            &-2-5 {
+                width: 40%;
+            }
+            
+            &-3-5 {
+                width: 60%;
+            }
+        }
+    }
+
+    @include bp--l {
+        .column--l {
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: auto;
+        }
+    }
+
+    @include bp--xl {
+        .column--xl {
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: auto;
+        }
+    }
+}
