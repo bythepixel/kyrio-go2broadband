@@ -91,7 +91,7 @@ const onWindowResize = bp => {
  * @param  {float}   stop
  * @return {boolean}
  */
-const inViewport = (element, start, stop) => {
+const inViewport = (element, start) => {
     // Get element dimensions
     const rect = element.getBoundingClientRect();
     // Get the document
@@ -99,9 +99,7 @@ const inViewport = (element, start, stop) => {
     // Return boolean
     return (
         // If element is inside top sweet spot
-        rect.top >= (window.innerHeight * start || html.clientHeight * start) &&
-        // And if element is inside bottom sweet spot
-        rect.bottom <= (window.innerHeight * stop || html.clientHeight * stop)
+        rect.top <= (window.innerHeight * start || html.clientHeight * start)
     );
 }
 
@@ -111,21 +109,26 @@ const inViewport = (element, start, stop) => {
  * @return {void}
  */
 const applyClassOnScroll = (item, active) => {
-    // Listen for window scroll event
-    window.addEventListener('scroll', () => {
+    const scrollEvent = () => {
         // If is in viewport and doesn't have active class
-        if (inViewport(item, 0.1, 0.9) && !item.classList.contains(active)) {
+        if (inViewport(item, 0.95)) {
             // Add active class
             item.classList.add(active);
+            unbindScroll();
             return;
         }
-        // If has active class
-        if (!inViewport(item, 0.1, 0.9) && item.classList.contains(active)) {
-            // Remove active class
-            item.classList.remove(active);
-            return;
-        }
-    });
+    }
+    
+    const unbindScroll = () => {
+        window.removeEventListener('scroll', scrollEvent);
+    }
+    
+    // Dispatch event on page load
+    setTimeout(() => {
+        // Listen for window scroll event
+        window.addEventListener('scroll', scrollEvent);
+        window.dispatchEvent(new Event('scroll', {bubbles: false, cancelable: false}));
+    }, 500);
 }
 
 /**
