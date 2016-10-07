@@ -6,8 +6,9 @@
     background-size: cover;
     background-position: center center;
     position: relative;
+    overflow: hidden;
     
-    &:after {
+    &.page__header:after {
         content: '';
         position: absolute;
         top: 0;

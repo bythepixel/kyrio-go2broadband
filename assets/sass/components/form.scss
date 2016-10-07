@@ -33,6 +33,7 @@
 .form__label,
 .form__textarea,
 .style-select {
+    border-radius: 0;
     @include bp--m {
         font-size: 2.0rem;
     }

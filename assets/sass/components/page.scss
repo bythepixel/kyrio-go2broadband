@@ -82,7 +82,6 @@
     
     .section__header {
         color: $color-light-blue;
-        // padding: 0 3.0rem;
         padding-bottom: 3.0rem;
         
         @include bp--l {
@@ -93,6 +92,7 @@
     &--grid {
         padding-top: 3.9rem;
         padding-bottom: 4.8rem;
+        background-image: url('../media/background-2.jpg');
         
         @include bp--l {
             padding-bottom: 9.0rem;
@@ -100,16 +100,12 @@
     }
     
     &--form {
+        background-image: url('../media/background-3.jpg');
+        
         @include bp--l {
             padding-top: 8.4rem;
             padding-bottom: 9.0rem;
         }
-        
-        // .form,
-        // .section__footer {
-        //     padding-right: 2.4rem;
-        //     padding-left: 2.4rem;
-        // }
         
         .form {
             max-width: 43rem;
