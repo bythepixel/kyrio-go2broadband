@@ -8,6 +8,10 @@
 const fadeIn = (load, loading, loaded) => {
     // Get the targeted elements
     const targets = document.querySelectorAll(`.${load}`);
+    // Get the loader
+    const loader = document.querySelector('.media__loader--holder');
+    // Get the last index
+    const last = targets.length - 1;
     // If we have targets
     if (targets.length) {
         // Loop through targets
@@ -33,9 +37,15 @@ const fadeIn = (load, loading, loaded) => {
                     setTimeout(() => {
                         target.classList.remove(load,loading,loaded);
                     }, 500);
+                    // If we're on the last item
+                    if (i === last) {
+                        // Hide the loader
+                        loader.style.opacity = 0;
+                        setTimeout(() => loader.parentNode.removeChild(loader), 400);
+                    }
+                    i++;
                 }, i * 200);
                 // Increate the index
-                i++;
             });
         });
     }
