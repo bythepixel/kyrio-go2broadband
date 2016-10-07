@@ -15,7 +15,9 @@
         &.row {
             flex-wrap: nowrap;
         }
-
+    }
+    
+    @include bp--xl {
         .column + .column {
             padding-left: 1px;
         }
@@ -51,7 +53,7 @@
     font-family: $font-standard;
     
     @include bp--m {
-        padding: 1.8rem;
+        padding: 2.3rem;
     }
 
     &:focus {
@@ -91,7 +93,7 @@
 
 .form__input {}
 .form__textarea {
-    min-height: 12.1rem;
+    height: 14.1rem;
 }
 
 .form__button {
@@ -111,8 +113,8 @@
     transition: top 0.1s, left 0.1s;
     
     @include bp--m {
-        top: 1.8rem;
-        left: 1.8rem;
+        top: 2.4rem;
+        left: 2.4rem;
     }
 }
 
@@ -120,10 +122,14 @@
 .form__textarea.form__has-value + .form__label,
 .form__input:focus + .form__label,
 .form__textarea:focus + .form__label {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     top: 0.2rem;
     left: 0.4rem;
     transform: translateZ(0);
+    
+    @include bp--m {
+        font-size: 1.2rem;
+    }
 }
 
 .form__checkbox {
@@ -171,7 +177,7 @@
             top: 50%;
             left: 1.0rem;
             padding: 0.3rem;
-            background: $color-teal;
+            background: $color-blue;
             transform: translate(0, -50%);
             z-index: 2;
             opacity: 0;
@@ -225,8 +231,8 @@ select[data-ss-uuid] {
             transition: transform 0.3s;
             
             @include bp--m {
-                top: 1.8rem;
-                right: 1.8rem;
+                top: 2.3rem;
+                right: 2.23rem;
             }
         }
     }
@@ -249,7 +255,7 @@ select[data-ss-uuid] {
             margin-bottom: 1px;
             
             &.highlighted {
-                background-color: $color-teal;
+                background-color: $color-blue;
                 color: $color-light;
             }
 

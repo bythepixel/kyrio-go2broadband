@@ -12,6 +12,10 @@
     transform: translate(-50%, -50%);
     background: url(../media/background-1.jpg) no-repeat;
     background-size: cover;
+    
+    @include bp--l {
+        min-height: 106.1rem;
+    }
 
     @include bp(1400) {
         min-width: 100%;
