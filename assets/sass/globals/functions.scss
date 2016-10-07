@@ -32,28 +32,3 @@
 @function col_size($span, $col_size) {
     @return $span / $col_size * 100%;
 }
-
-// **
-// _EMS
-//
-// @params  $num    int
-//          $multi  float|int  opt
-//
-// Method to calc precise ems on the fly. To change base font multiplier,
-// change $multi param
-//
-// Usage: _ems(36, 1.5);
-// Returns: 1.5em;
-// *
-
-@function _ems($num_input, $inherited_multi: 1) {
-  @if length($num_input) < 2 {
-    @return nth($num_input, 1) / ((strip-unit($base-font-size) * 10) * $inherited_multi) * 1em;
-    }@else {
-        $alter_nums: null;
-        @each $num in $num_input {
-          $alter_nums: append($alter_nums, $num / ((strip-unit($base-font-size) * 10) * $inherited_multi) * 1em);
-      }
-      @return $alter_nums;
-  }
-}

@@ -6,8 +6,6 @@
     @include max-width();
     @extend %clearfix;
 
-    &--reverse {}
-    
     &--wide {
         @include max-width(true);
     }

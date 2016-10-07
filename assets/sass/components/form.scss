@@ -11,6 +11,7 @@
         max-width: 100%;
         margin-left: 0;
         margin-right: 0;
+
         &.row {
             flex-wrap: nowrap;
         }
@@ -184,11 +185,9 @@
         }
     }
     
-    &:checked {
-        + .form__label:after {
-            transform: translate(0, -50%) translateZ(0);
-            opacity: 1;
-        }
+    &:checked + .form__label:after {
+        transform: translate(0, -50%) translateZ(0);
+        opacity: 1;
     }
 }
 
@@ -214,6 +213,7 @@ select[data-ss-uuid] {
 
     .ss-selected-option {
         width: 100%;
+        
         &:after {
             content: "▾";
             position: absolute;

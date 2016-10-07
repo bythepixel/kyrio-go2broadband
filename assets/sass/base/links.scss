@@ -2,10 +2,13 @@
 // Links //
 ///////////
 
-a, a:visited {
+a,
+a:visited {
     text-decoration: none;
 }
 
+// This rule targets links that don't have a
+// class="..." attribute on them
 a:not([class]) {
     text-decoration: underline;
 }

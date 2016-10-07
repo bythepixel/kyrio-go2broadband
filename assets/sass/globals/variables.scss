@@ -12,12 +12,6 @@ $defined-font-size : 62.5%;
 $base-font-size    : 1.6rem;
 $base-lineheight   : 1.2;
 
-// **
-// BORDERS
-// *
-$border-small: 1px;
-$border-med  : 0.6rem;
-$border-thick: 1.2rem;
 
 // **
 // COLORS
@@ -35,49 +29,6 @@ $color-teal      : #03A5A5;
 $color-orange    : #F2A74B;
 $color-red       : #D81E1E;
 
-// **
-// COLUMNS
-// *
-
-// 12
-$col-1-12 : col_size(1, 12);
-$col-5-12 :	col_size(5, 12);
-$col-7-12 :	col_size(7, 12);
-$col-11-12:	col_size(11, 12);
-
-// 10
-$col-1-10: col_size(1, 10);
-$col-3-10: col_size(3, 10);
-$col-7-10: col_size(7, 10);
-$col-9-10: col_size(10, 10);
-
-// 8
-$col-1-8: col_size(1, 8);
-$col-3-8: col_size(3, 8);
-$col-5-8: col_size(5, 8);
-$col-7-8: col_size(7, 8);
-
-// 6
-$col-1-6: col_size(1, 6);
-$col-5-6: col_size(5, 6);
-
-// 5
-$col-1-5: col_size(1, 5);
-$col-2-5: col_size(2, 5);
-$col-3-5: col_size(3, 5);
-$col-4-5: col_size(4, 5);
-
-// 4
-$col-1-4: col_size(1, 4);
-$col-3-4: col_size(3, 4);
-
-// 3
-$col-1-3: col_size(1, 3);
-$col-2-3: col_size(2, 3);
-
-// 2
-$col-1-2: col_size(1, 2);
-
 
 // **
 // BREAKPOINTS
@@ -88,15 +39,6 @@ $bp--m  : 800;
 $bp--l  : 1000;
 $bp--xl : 1200;
 
-
-// **
-// TRANSITIONS
-// *
-$transition-method: ease-in-out;
-
-$transition-fast: 0.20s $transition-method;
-$transition-reg : 0.35s $transition-method;
-$transition-slow: 0.50s $transition-method;
 
 // **
 // FONTS
