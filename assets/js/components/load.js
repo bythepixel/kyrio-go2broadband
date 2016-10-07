@@ -110,28 +110,20 @@ const inViewport = (element, start, stop) => {
  * @param  {string} active
  * @return {void}
  */
-const applyClassOnScroll = active => {
-    // Get grid element
-    const grid = document.getElementById('grid');
-    // Get grid element direct children
-    const gridItems = grid.children;
-    // Get number of grid children
-    const len = gridItems.length;
+const applyClassOnScroll = (item, active) => {
     // Listen for window scroll event
     window.addEventListener('scroll', () => {
-        // Loop through items
-        for (let i = 0; i < len; i++) {
-            // Cache the grid child
-            const item = gridItems[i];
-            // If is in viewport and doesn't have active class
-            if (inViewport(item, 0.3, 0.7) && !item.classList.contains(active)) {
-                // Add active class
-                item.classList.add(active);
-            // Else if has active class
-            } else if (item.classList.contains(active)) {
-                // Remove active class
-                item.classList.remove(active);
-            }
+        // If is in viewport and doesn't have active class
+        if (inViewport(item, 0.1, 0.9) && !item.classList.contains(active)) {
+            // Add active class
+            item.classList.add(active);
+            return;
+        }
+        // If has active class
+        if (!inViewport(item, 0.1, 0.9) && item.classList.contains(active)) {
+            // Remove active class
+            item.classList.remove(active);
+            return;
         }
     });
 }
@@ -143,7 +135,7 @@ const applyClassOnScroll = active => {
 const pageInit = () => {
     fadeIn('interaction--load', 'interaction--loading', 'interaction--loaded');
     onWindowResize(800)
-    applyClassOnScroll('interaction--scale');
+    applyClassOnScroll(document.getElementById('grid'), 'interaction--scale');
 }
 // Export so we can use as a module
 export { pageInit };
