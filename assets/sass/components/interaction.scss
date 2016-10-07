@@ -20,11 +20,3 @@
     opacity: 1;
     transform: translateY(0);
 }
-
-.interaction--scale {
-    @include bp--m {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        transform: translateZ(0);
-    }
-}
