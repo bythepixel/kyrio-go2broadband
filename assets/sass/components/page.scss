@@ -22,10 +22,6 @@
     .header__container {
         max-width: 43rem;
         
-        @include bp--m {
-            max-width: 52rem;
-        }
-        
         @include bp(850) {
             max-width: 68rem;
         }
@@ -116,10 +112,6 @@
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 3.6rem;
-            
-            @include bp--m {
-                max-width: 52rem;
-            }
             
             @include bp(850) {
                 max-width: 100%;
