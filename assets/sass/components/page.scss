@@ -26,6 +26,10 @@
             max-width: 52rem;
         }
         
+        @include bp(850) {
+            max-width: 68rem;
+        }
+        
         @include bp--xl {
             @include max-width();
             .column {
@@ -56,13 +60,13 @@
             padding-right: 4.8rem;
         }
         
-        @include bp--l {
+        @include bp--xl {
             padding-right: 7.2rem;
         }
     }
     
     .form {
-        @include bp--l {
+        @include bp--xl {
             padding-top: 2.0rem;
             padding-left: 1.8rem;
             padding-right: 0.6rem;
@@ -117,13 +121,17 @@
                 max-width: 52rem;
             }
             
-            @include bp--xl {
+            @include bp(850) {
                 max-width: 100%;
                 
                 .column {
                     display: inline-block;
                     float: left;
                     width: 50%;
+                    
+                    + .column {
+                        padding-left: 1px;
+                    }
                 }
             }
         }

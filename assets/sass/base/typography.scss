@@ -26,7 +26,6 @@ h3 {
 .page__title {
     font-size: 4.0rem;
     margin-bottom: 1.2rem;
-    text-shadow: 0 0.3rem 0.6rem rgba($color-dark, 0.2);
     
     @include bp--s {
         font-size: 4.8rem;
