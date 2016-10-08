@@ -111,7 +111,7 @@ const inViewport = (element, start) => {
 const applyClassOnScroll = (item, active) => {
     const scrollEvent = () => {
         // If is in viewport and doesn't have active class
-        if (inViewport(item, 0.95)) {
+        if (inViewport(item, 0.7)) {
             // Add active class
             item.classList.add(active);
             unbindScroll();
