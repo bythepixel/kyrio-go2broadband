@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kyrio GO2Broadband</title>
+    <meta name="description" content="Shop for broadband cable services in your area. See plans, prices, and schedule your service.">
     <link rel="stylesheet" href="css/app.css" type="text/css">
     <link rel="shortcut icon" href="favicon/favicon.ico">
 	<link rel="icon" sizes="16x16 32x32 64x64" href="favicon/favicon.ico">
@@ -26,12 +27,17 @@
 	<meta name="msapplication-TileImage" content="favicon/favicon-144.png">
 	<meta name="msapplication-config" content="favicon/browserconfig.xml">
   <body>
-      <header class="page__header overlay">
+      <div class="media__loader--holder">
+          <div class="media__loader media__loader--inside"></div>
+          <div class="media__loader media__loader--outside"></div>
+      </div>
+      <header class="page__header overlay interaction--load">
         <div class="overlay__media">
-            <video playsinline autoplay muted loop poster="media/background-1.jpg" id="bgvid" class="media__video">
+            <video playsinline autoplay muted loop class="media__video" controls="false">
                 <source src="media/videos/HeroBG.webm" type="video/webm">
                 <source src="media/videos/HeroBG.mp4" type="video/mp4">
             </video>
+            <div class="media__video--fallback"></div>
         </div>
         <nav class="row row--wide nav nav--main">
             <div class="nav__brand">
@@ -40,11 +46,11 @@
             </div>
         </nav>
         <div class="row header__container">
-            <div class="header__content column column--m column--m-1-2">
-                <h1 class="page__title">Shop for <span class="color--orange">broadband</span> <br>cable services in your area.</h1>
+            <div class="header__content column">
+                <h1 class="page__title">Shop for <span class="color--orange">broadband</span> cable services in your area.</h1>
                 <p>See plans, prices, and schedule your service.</p>
             </div>
-            <div class="column column--m column--m-1-2">
+            <div class="column">
                 <form action="" class="form">
                     <div class="row form__row">
                         <input type="text" class="form__input" name="address_1" id="address_1">
@@ -72,7 +78,7 @@
                                 <label for="opt-in" class="form__label">I would like to receive special offers and updates from my cable company.</label>
                             </div>
                             <div class="group__item group__item--button">
-                                <button class="button form__button form__buttom--square">Go</button>
+                                <button class="button form__button button--square">Go</button>
                             </div>
                         </div>
                     </div>
@@ -80,7 +86,7 @@
             </div>
         </div>
       </header>
-      <section class="page__section">
+      <section class="page__section interaction--load">
           <header class="section__header">
               <h2 class="section__title">Get Connected. <span class="title--emph">Faster</span></h2>
           </header>
@@ -132,11 +138,11 @@
               </div>
           </section>
       </section>
-      <section class="page__section overlay page__section--grid" style="background-image: url('media/background-2.jpg');">
+      <section class="page__section overlay page__section--grid interaction--load">
           <header class="section__header">
               <h2 class="section__title">Every Cable Provider, <span class="title--emph">One Search</span></h2>
           </header>
-          <section class="row row--wide grid">
+          <section class="row row--wide grid" id="grid">
               <div class="grid__item">
                   <img src="media/providers/cox-logo.png" class="grid__media">
               </div>
@@ -184,13 +190,13 @@
               </div>
           </section>
       </section>
-      <section class="page__section overlay page__section--form" style="background-image: url('media/background-3.jpg');">
+      <section class="page__section overlay page__section--form interaction--load">
           <header class="row row--wide section__header section__header--align-left">
               <h2 class="section__title">Questions?</h2>
           </header>
           <form action="" class="form">
               <div class="row row--wide">
-                  <div class="column column--m column--m-2-5">
+                  <div class="column column--l-2-5">
                       <div class="form__row">
                           <input type="text" name class="form__input">
                           <label for="name" class="form__label">Name</label>
@@ -204,7 +210,7 @@
                           <label for="captcha" class="form__label">2 + 10 = ?</label>
                       </div>
                   </div>
-                  <div class="column column--m column--m-3-5">
+                  <div class="column column--l-3-5">
                       <div class="form__row">
                           <textarea name="text" id="text" class="form__textarea"></textarea>
                           <label for="text" class="form__label">Message</label>
@@ -213,7 +219,7 @@
                   </div>
               </div>
           </form>
-          <footer class="section__footer">
+          <footer class="row--wide section__footer">
               <p>Powered by</p>
               <div class="footer__brand">
                   <img src="media/kyrio-logo.png" width="212" alt="Kyrio - GO2Broadband">

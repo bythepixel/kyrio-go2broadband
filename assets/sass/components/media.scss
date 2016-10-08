@@ -2,21 +2,120 @@
 // Media //
 ///////////
 
-.media__video {
+.media__video,
+.media__video--fallback {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    height: 60.0rem;
+    z-index: -1;
+    transform: translate(-50%, 0);
+    
+    @include bp--m {
+        height: 77.9rem;
+    }
+    
+    @include bp--l {
+        height: 83.5rem;
+    }
+
+    @include bp(1400) {
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        left: 0;
+        transform: none;
+        height: auto;
+        width: auto;
+    }
+}
+
+.media__video--fallback {
+    background: url(../media/background-1.jpg) no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+video {
+    &::-webkit-media-controls-panel {
+      display: none!important;
+      -webkit-appearance: none;
+    }
+    
+    &::--webkit-media-controls-play-button {
+      display: none!important;
+      -webkit-appearance: none;
+    }
+    
+    &::-webkit-media-controls-start-playback-button {
+      display: none!important;
+      -webkit-appearance: none;
+    }
+}
+
+.media__loader--holder {
+    position: fixed;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.media__loader {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 177.7%;
-    min-height: 100%;
-    z-index: -1;
     transform: translate(-50%, -50%);
-    background: url(../media/background-1.jpg) no-repeat;
-    background-size: cover;
+    display: inline-block;
+    border-radius: 50%;
+    z-index: 1;
+    vertical-align: middle;
+    pointer-events: none;
+}
 
-    @include bp(1400) {
-        min-width: 100%;
-        min-height: 100%;
-        height: auto;
-        width: auto;
+.media__loader--outside {
+    border: 0.3em solid transparent;
+    border-left-color: rgba($color-red, 0.7);
+    border-right-color: rgba($color-red, 0.7);
+    animation: 0.8s loader-outside ease-in-out infinite;
+    height: 4.5rem;
+    width: 4.5rem;
+
+    @keyframes loader-outside {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(180deg);
+            opacity: 0;
+        }
+    }
+}
+
+.media__loader--inside {
+    border: 0.35em solid transparent;
+    border-left-color: $color-red;
+    border-right-color: $color-red;
+    animation: 0.35s loader-inside linear infinite;
+    width: 3.0rem;
+    height: 3.0rem;
+    
+    @keyframes loader-inside {
+        0% {
+            transform: translate(-50%, -50%) rotate(-0deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(-180deg);
+        }
     }
 }

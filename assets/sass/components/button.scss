@@ -10,7 +10,7 @@
     font-size: 1.8rem;
     text-transform: uppercase;
     color: $color-light;
-    transition: background 0.3s;
+    // transition: color 0.3s;
     cursor: pointer;
     line-height: 1.2;
     
@@ -19,8 +19,8 @@
     }
     
     &:hover {
-        transform: translateZ(0);
-        background: darken($color-orange, 8%);
+        // transform: translateZ(0);
+        color: $color-dark;
     }
     
     &--full-width {
@@ -29,7 +29,17 @@
         text-align: center;
         
         @include bp--m {
-            padding: 1.2rem;
+            padding: 1.7rem;
+        }
+    }
+    
+    &--square {
+        height: 4.4rem;
+        width: 4.4rem;
+        
+        @include bp--m {
+            height: 7.0rem;
+            width: 7.0rem;
         }
     }
 }

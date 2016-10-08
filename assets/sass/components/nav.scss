@@ -8,11 +8,11 @@
         padding-bottom: 3.0rem;
         
         @include bp--m {
-            padding-top: 4.8rem;
-            padding-bottom: 7.2rem;
+            padding-top: 3.6rem;
+            padding-bottom: 4.8rem;
         }
         
-        @include bp--l {
+        @include bp--xl {
             padding-top: 7.2rem;
             padding-bottom: 12.4rem;
         }
