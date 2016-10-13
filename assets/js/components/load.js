@@ -80,8 +80,12 @@ const onWindowResize = bp => {
             paused = false;
         }
     });
+    // Create a new Event obj
+    let ev = document.createEvent('Event');
+    // Init the event
+    ev.initEvent('resize', false, true);
     // Fire resize event on load
-    window.dispatchEvent(new Event('resize', {bubbles: false, cancelable: false}));
+    window.dispatchEvent(ev);
 }
 
 /**
@@ -127,7 +131,12 @@ const applyClassOnScroll = (item, active) => {
     setTimeout(() => {
         // Listen for window scroll event
         window.addEventListener('scroll', scrollEvent);
-        window.dispatchEvent(new Event('scroll', {bubbles: false, cancelable: false}));
+        // Create a new Event obj
+        let ev = document.createEvent('Event');
+        // Init the event
+        ev.initEvent('scroll', false, true);
+        // Dispatch the scroll event
+        window.dispatchEvent(ev);
     }, 500);
 }
 

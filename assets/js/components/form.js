@@ -26,6 +26,12 @@
                  }
              }
          });
+        //  Create a new Event obj
+         let ev = document.createEvent('Event');
+        //  Init the event
+         ev.initEvent('input', false, true);
+         // Dispatch the event
+         el.dispatchEvent(ev);
      }
  }
 // Export so we can use as a module
