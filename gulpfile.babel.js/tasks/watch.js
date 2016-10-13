@@ -6,6 +6,7 @@ import config from '../config'
 // Create the sassTask
 const sassTask = () => {
     compileSass(config.tasks.sass.src + '/app.scss', config.tasks.sass.dest)
+    compileSass(config.tasks.sass.src + '/ie.scss', config.tasks.sass.dest)
 }
 
 // Create the jsTask
