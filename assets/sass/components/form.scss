@@ -64,17 +64,12 @@
 
 .form__group {
     display: table-row;
-    
-    &.row {
-        flex-wrap: nowrap;
-        align-items: stretch;
-    }
 }
 
 .form__group .group__item {
     color: $color-light;
     display: table-cell;
-    vertical-align: top;
+    vertical-align: middle;
 
     &--checkbox {
         height: 4.4rem;
@@ -138,14 +133,12 @@
     
     + .form__label {
         color: $color-light;
-        position: absolute;
-        top: 50%;
-        left: 0;
         font-size: 1.0rem;
         padding-left: 3.0rem;
         padding-right: 2.4rem;
-        transform: translate(0, -50%);
-        
+        top: 0;
+        left: 0;
+        position: relative;
         @include bp--m {
             font-size: 1.6rem;
             padding-left: 4.8rem;
