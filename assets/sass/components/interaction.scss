@@ -5,8 +5,9 @@
 .interaction--load {
     opacity: 0;
     transition: opacity 0.3s, transform 0.3s;
-    transform: translateY(1.8rem);
-    
+    transform: translateZ(0) translateY(1.8rem);
+    backface-visibility: hidden;
+
     &.page__header {
         transform: none;
     }
@@ -14,9 +15,11 @@
 
 .interaction--loading {
     transform: translateZ(0) translateY(0);
+    backface-visibility: hidden;
 }
 
 .interaction--loaded {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateZ(0) translateY(0);
+    backface-visibility: hidden;
 }
