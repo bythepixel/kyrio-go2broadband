@@ -16,15 +16,6 @@
             padding-top: 7.2rem;
             padding-bottom: 12.4rem;
         }
-
-        > .row {
-            flex-wrap: nowrap;
-            flex-direction: column;
-
-            @include bp--m {
-                flex-direction: row;
-            }
-        }
         
         .nav__brand {
             text-align: right;
