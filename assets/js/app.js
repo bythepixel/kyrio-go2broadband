@@ -1,6 +1,6 @@
 import styleSelect from 'styleSelect';
 import { formHandling } from './components/form';
-import { pageInit } from './components/load.js';
+import { pageInit } from './components/load';
 // Run page init
 pageInit();
 // Run form handling
