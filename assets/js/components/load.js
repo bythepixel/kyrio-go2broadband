@@ -80,13 +80,15 @@ const onWindowResize = bp => {
             paused = false;
         }
     });
-    // Fire resize event on load
-    window.dispatchEvent(new Event('resize', {bubbles: false, cancelable: false}));
+    //  Create a new CustomEvent
+     let ev = new CustomEvent('resize');
+     // Dispatch the event
+     window.dispatchEvent(ev);
 }
 
 /**
  * Check if element is in viewport
- * @param  {Element} element 
+ * @param  {Element} element
  * @param  {float}   start
  * @param  {float}   stop
  * @return {boolean}
@@ -118,16 +120,19 @@ const applyClassOnScroll = (item, active) => {
             return;
         }
     }
-    
+
     const unbindScroll = () => {
         window.removeEventListener('scroll', scrollEvent);
     }
-    
+
     // Dispatch event on page load
     setTimeout(() => {
         // Listen for window scroll event
         window.addEventListener('scroll', scrollEvent);
-        window.dispatchEvent(new Event('scroll', {bubbles: false, cancelable: false}));
+        //  Create a new CustomEvent
+         let ev = new CustomEvent('scroll');
+         // Dispatch the event
+         window.dispatchEvent(ev);
     }, 500);
 }
 

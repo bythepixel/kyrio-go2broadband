@@ -1,0 +1,14 @@
+///////////////////////
+// Internet Explorer //
+///////////////////////
+
+.interaction--load,
+.interaction--loading,
+.interaction--loaded, {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.media__loader--holder {
+    display: none !important;
+}

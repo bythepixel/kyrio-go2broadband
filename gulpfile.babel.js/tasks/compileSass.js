@@ -41,6 +41,7 @@ const compile = (_in, _out) => {
 
 gulp.task('compileSass', () => {
     compile(config.tasks.sass.src + '/app.scss', config.tasks.sass.dest)
+    compile(config.tasks.sass.src + '/ie.scss', config.tasks.sass.dest)
 })
 
 export default compile
