@@ -80,17 +80,15 @@ const onWindowResize = bp => {
             paused = false;
         }
     });
-    // Create a new Event obj
-    let ev = document.createEvent('Event');
-    // Init the event
-    ev.initEvent('resize', false, true);
-    // Fire resize event on load
-    window.dispatchEvent(ev);
+    //  Create a new CustomEvent
+     let ev = new CustomEvent('resize');
+     // Dispatch the event
+     window.dispatchEvent(ev);
 }
 
 /**
  * Check if element is in viewport
- * @param  {Element} element 
+ * @param  {Element} element
  * @param  {float}   start
  * @param  {float}   stop
  * @return {boolean}
@@ -122,21 +120,19 @@ const applyClassOnScroll = (item, active) => {
             return;
         }
     }
-    
+
     const unbindScroll = () => {
         window.removeEventListener('scroll', scrollEvent);
     }
-    
+
     // Dispatch event on page load
     setTimeout(() => {
         // Listen for window scroll event
         window.addEventListener('scroll', scrollEvent);
-        // Create a new Event obj
-        let ev = document.createEvent('Event');
-        // Init the event
-        ev.initEvent('scroll', false, true);
-        // Dispatch the scroll event
-        window.dispatchEvent(ev);
+        //  Create a new CustomEvent
+         let ev = new CustomEvent('scroll');
+         // Dispatch the event
+         window.dispatchEvent(ev);
     }, 500);
 }
 

@@ -1,7 +1,7 @@
  const formHandling = () => {
      // Get the text inputting form els
      const formEls = document.querySelectorAll('.form__input, .form__textarea');
-     
+
      // Loop the form els
      for (let i = 0; i < formEls.length; i++) {
          // Cache the current element
@@ -26,13 +26,18 @@
                  }
              }
          });
-        //  Create a new Event obj
-         let ev = document.createEvent('Event');
-        //  Init the event
-         ev.initEvent('input', false, true);
-         // Dispatch the event
-         el.dispatchEvent(ev);
      }
+
+    // Wait for the window to load before firing events
+     window.addEventListener('load', () => {
+         // Create a new CustomEvent
+         let ev = new CustomEvent('input');
+         // Loop elements
+         for (let i = 0; i < formEls.length; i++) {
+              // Dispatch the event
+              formEls[i].dispatchEvent(ev);
+         }
+     });
  }
 // Export so we can use as a module
 export { formHandling };

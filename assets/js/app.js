@@ -1,7 +1,9 @@
 import styleSelect from 'styleSelect';
-import { classListPoly } from './components/class_list_poly';
+import { customEventPoly, classListPoly } from './components/polyfill';
 import { formHandling } from './components/form';
 import { pageInit } from './components/load';
+// Shim 'CustomEvent'
+customEventPoly();
 // Shim 'classList' for IE9
 classListPoly();
 // Add IE class
