@@ -1,5 +1,6 @@
 import routes from './routes'
 import browserSync from './browserSync'
+import templates from './templates'
 import sass from './sass'
 import js from './js'
 
@@ -15,6 +16,7 @@ export default {
     // Task specific config should be added here
     tasks: {
         browserSync: browserSync,
+        templates: templates,
         sass: sass,
         js: js,
     }

@@ -1,0 +1,199 @@
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+<div class="media__loader--holder">
+    <div class="media__loader media__loader--inside"></div>
+    <div class="media__loader media__loader--outside"></div>
+</div>
+<header class="page__header overlay interaction--load">
+  <div class="overlay__media">
+      <video playsinline autoplay muted loop class="media__video" controls="false">
+          <source src="media/videos/HeroBG.webm" type="video/webm">
+          <source src="media/videos/HeroBG.mp4" type="video/mp4">
+      </video>
+      <div class="media__video--fallback"></div>
+  </div>
+  <nav class="row row--wide nav nav--main">
+      <div class="nav__brand">
+          <img src="media/go2-broadband-logo.png" width="312" alt="Kyrio - GO2Broadband">
+          <p>Cable Service Locator</p>
+      </div>
+  </nav>
+  <div class="row header__container">
+      <div class="header__content column">
+          <h1 class="page__title">Shop for <span class="color--orange">broadband</span> cable services in your area.</h1>
+          <p>See plans, prices, and schedule your service.</p>
+      </div>
+      <div class="column">
+          <form action="" class="form">
+              <div class="row form__row">
+                  <input type="text" class="form__input" name="address_1" id="address_1">
+                  <label for="address_1" class="form__label">Enter your street address</label>
+              </div>
+              <div class="row form__row">
+                  <input type="text" class="form__input" name="address_2" id="address_2">
+                  <label for="address_2" class="form__label">Address line 2</label>
+              </div>
+              <div class="row form__row">
+                  <input type="text" class="form__input" name="zip" id="zip">
+                  <label for="zip" class="form__label">Zip code</label>
+              </div>
+              <div class="row form__row">
+                  <select name="services" id="services" class="form__select">
+                      <option value="all">All Cable Services</option>
+                      <option value="some">Some Cable Services</option>
+                      <option value="none">No Cable Services</option>
+                  </select>
+              </div>
+              <div class="form__row">
+                  <div class="row form__group">
+                      <div class="group__item group__item--checkbox">
+                          <input type="checkbox" class="form__checkbox" name="opt-in" id="opt-in">
+                          <label for="opt-in" class="form__label">I would like to receive special offers and updates from my cable company.</label>
+                      </div>
+                      <div class="group__item group__item--button">
+                          <button class="button form__button button--square">Go</button>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</header>
+<section class="page__section interaction--load">
+    <header class="section__header">
+        <h2 class="section__title">Get Connected. <span class="title--emph">Faster</span></h2>
+    </header>
+    <section class="row section__content badge__collection">
+        <div class="badge">
+            <div class="badge__media">
+                <img src="media/search-graphic.png" alt="">
+            </div>
+            <header class="badge__header">
+                <h3 class="badge__title">Search</h3>
+            </header>
+            <section class="badge__content">
+                <p>Enter your address and zip code to find the cable provider that service your area.</p>
+            </section>
+        </div>
+
+        <div class="badge__divider">
+            <img class="badge__divider--horiz" src="media/badge-divider-horiz.png">
+            <img class="badge__divider--vert"src="media/badge-divider-vert.png">
+        </div>
+
+        <div class="badge">
+            <div class="badge__media">
+                <img src="media/setup-graphic.png" alt="">
+            </div>
+            <header class="badge__header">
+                <h3 class="badge__title">Setup</h3>
+            </header>
+            <section class="badge__content">
+                <p>Compare plans and choose the one that fits your needs.</p>
+            </section>
+        </div>
+
+        <div class="badge__divider">
+            <img class="badge__divider--horiz" src="media/badge-divider-horiz.png">
+            <img class="badge__divider--vert"src="media/badge-divider-vert.png">
+        </div>
+
+        <div class="badge">
+            <div class="badge__media">
+                <img src="media/schedule-graphic.png" alt="">
+            </div>
+            <header class="badge__header">
+                <h3 class="badge__title">Schedule</h3>
+            </header>
+            <section class="badge__content">
+                <p>Select the date and time you’d like to schedule your installation.</p>
+            </section>
+        </div>
+    </section>
+</section>
+<section class="page__section overlay page__section--grid interaction--load">
+    <header class="section__header">
+        <h2 class="section__title">Every Cable Provider, <span class="title--emph">One Search</span></h2>
+    </header>
+    <section class="row row--wide grid" id="grid">
+        <div class="grid__item">
+            <img src="media/providers/cox-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/sudden-link-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/xfinity-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/bright-house-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/time-warner-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/metro-cast-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/cable-one-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/bend-broadband-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/armstrong-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/mctv-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/optimum-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/midco-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/atlantic-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/charter-logo.png" class="grid__media">
+        </div>
+        <div class="grid__item">
+            <img src="media/providers/mediacom-logo.png" class="grid__media">
+        </div>
+    </section>
+</section>
+<section class="page__section overlay page__section--form interaction--load">
+    <header class="row row--wide section__header section__header--align-left">
+        <h2 class="section__title">Questions?</h2>
+    </header>
+    <form action="" class="form">
+        <div class="row row--wide">
+            <div class="column column--l-2-5">
+                <div class="form__row">
+                    <input type="text" name class="form__input">
+                    <label for="name" class="form__label">Name</label>
+                </div>
+                <div class="form__row">
+                    <input type="email" name="email" class="form__input">
+                    <label for="email" class="form__label">Email</label>
+                </div>
+                <div class="form__row">
+                    <input type="text" name="captcha" class="form__input">
+                    <label for="captcha" class="form__label">2 + 10 = ?</label>
+                </div>
+            </div>
+            <div class="column column--l-3-5">
+                <div class="form__row">
+                    <textarea name="text" id="text" class="form__textarea"></textarea>
+                    <label for="text" class="form__label">Message</label>
+                </div>
+                <button class="button button--full-width form__button">Send</button>
+            </div>
+        </div>
+    </form>
+
+    {% include "_partials/page-footer.nunjucks" %}
+</section>
+{% endblock %}

@@ -7,9 +7,17 @@ import buffer from 'vinyl-buffer'
 import browserify from 'browserify'
 import babel from 'babelify'
 import handleError from '../lib/handleJsError'
+import chalk from 'chalk'
+
+const compileConsoleNotify = (_in, _out) => {
+    return console.log(`Compiling js from ${chalk.underline.cyan(_in)} to ${chalk.underline.green(_out)}`)
+}
 
 // Compile and bundle all js with broserify
 function compile(_in, _out, name = 'app.js') {
+    // Show a console notification
+    compileConsoleNotify(_in, _out);
+    // Run the task
     return browserify(_in, {
             debug: !config.isProduction()
         })
@@ -18,7 +26,7 @@ function compile(_in, _out, name = 'app.js') {
         .on('error', handleError) // Handle any js errors
         .pipe(source(name)) // Init the output source stream
         .pipe(buffer())
-        .pipe(gulpIf(config.isProduction(), uglify())) // If prod flag, minify
+        .pipe(uglify()) // minify
         .pipe(gulp.dest(_out)) // Push to the output
 }
 

@@ -1,0 +1,8 @@
+<footer class="row--wide section__footer">
+    <p>Powered by</p>
+    <div class="footer__brand">
+        <img src="media/kyrio-logo.png" width="212" alt="Kyrio - GO2Broadband">
+    </div>
+    <p>Copyright Kyrio(TM), Inc. 2016. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+</footer>
