@@ -2,6 +2,7 @@ import gulp from 'gulp'
 import compileSass from './compileSass'
 import compileJs from './compileJs'
 import compileTemplates from './compileTemplates'
+import browserSync from 'browser-sync'
 import config from '../config'
 
 // Create the sassTask
@@ -25,6 +26,9 @@ const watchTask = () => {
     gulp.watch(config.tasks.sass.src + '/**/*.scss', sassTask)
     gulp.watch(config.tasks.js.src + '/**/*.js', jsTask)
     gulp.watch(config.tasks.templates.src + '/**/*.+(html|nunjucks)', templateTask)
+    gulp.watch(config.routes.src + '/**/*.+(js|html|nunjucks)').on('change', () => {
+        setTimeout(browserSync.reload, 300)
+    })
 }
 
 // Run the watch task
