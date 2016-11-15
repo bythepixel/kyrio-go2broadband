@@ -1,62 +1,62 @@
 {% set logos = [
     {
         "src": "cox-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Cox Logo"
     },
     {
         "src": "sudden-link-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Sudden Link Logo"
     },
     {
         "src": "xfinity-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Xfinity Logo"
     },
     {
         "src": "bright-house-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - BrightHouse Logo"
     },
     {
         "src": "time-warner-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Time Warner Logo"
     },
     {
         "src": "metro-cast-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Metro Cast Logo"
     },
     {
         "src": "cable-one-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Cable One Logo"
     },
     {
         "src": "bend-broadband-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Bend Broadband Logo"
     },
     {
         "src": "armstrong-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Armstrong Logo"
     },
     {
         "src": "mctv-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - MCTV Logo"
     },
     {
         "src": "optimum-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Optimum Logo"
     },
     {
         "src": "midco-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Midco Logo"
     },
     {
         "src": "atlantic-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Atlantic Logo"
     },
     {
         "src": "charter-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Charter Logo"
     },
     {
         "src": "mediacom-logo.png",
-        "alt": ""
+        "alt": "Kyrio Go2Broadband - Mediacom Logo"
     }
 ] %}
