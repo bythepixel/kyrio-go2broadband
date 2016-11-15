@@ -1,0 +1,12 @@
+{% import "_data/process-icons.nunjucks" as processIcons %}
+
+{% macro icons(active="") %}
+<div class="process-list">
+    {% for icon in processIcons.icons %}
+    <a href="#" class="process-list__item process-item{% if active === icon.text %} process-item--active{% endif %}">
+        <i class="process-item__img icon icon--{{ icon.icon }}"></i>
+        <p class="process-item__text">{{ icon.text }}</p>
+    </a>
+    {% endfor %}
+</div>
+{% endmacro %}

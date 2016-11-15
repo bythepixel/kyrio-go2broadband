@@ -1,0 +1,62 @@
+{% set logos = [
+    {
+        "src": "cox-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "sudden-link-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "xfinity-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "bright-house-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "time-warner-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "metro-cast-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "cable-one-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "bend-broadband-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "armstrong-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "mctv-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "optimum-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "midco-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "atlantic-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "charter-logo.png",
+        "alt": ""
+    },
+    {
+        "src": "mediacom-logo.png",
+        "alt": ""
+    }
+] %}

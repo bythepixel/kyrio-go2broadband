@@ -1,4 +1,6 @@
+{% set asset_location = "" %}
 {% extends "layout.nunjucks" %}
+{% import "_macros/provider-grid.nunjucks" as providerGrid %}
 
 {% block content %}
 <div class="media__loader--holder">
@@ -8,14 +10,14 @@
 <header class="page__header overlay interaction--load">
   <div class="overlay__media">
       <video playsinline autoplay muted loop class="media__video" controls="false">
-          <source src="/media/videos/HeroBG.webm" type="video/webm">
-          <source src="/media/videos/HeroBG.mp4" type="video/mp4">
+          <source src="{{ asset_location }}media/videos/HeroBG.webm" type="video/webm">
+          <source src="{{ asset_location }}media/videos/HeroBG.mp4" type="video/mp4">
       </video>
       <div class="media__video--fallback"></div>
   </div>
   <nav class="row row--wide nav nav--main">
       <div class="nav__brand">
-          <img src="/media/go2-broadband-logo.png" width="312" alt="Kyrio - GO2Broadband">
+          <img src="{{ asset_location }}media/go2-broadband-logo.png" width="312" alt="Kyrio - GO2Broadband">
           <p>Cable Service Locator</p>
       </div>
   </nav>
@@ -25,7 +27,7 @@
           <p>See plans, prices, and schedule your service.</p>
       </div>
       <div class="column">
-          <form action="" class="form">
+          <form action="" class="form form--condensed">
               <div class="row form__row">
                   <input type="text" class="form__input" name="address_1" id="address_1">
                   <label for="address_1" class="form__label">Enter your street address</label>
@@ -67,7 +69,7 @@
     <section class="row section__content badge__collection">
         <div class="badge">
             <div class="badge__media">
-                <img src="/media/search-graphic.png" alt="">
+                <img src="{{ asset_location }}media/search-graphic.png" alt="">
             </div>
             <header class="badge__header">
                 <h3 class="badge__title">Search</h3>
@@ -84,7 +86,7 @@
 
         <div class="badge">
             <div class="badge__media">
-                <img src="/media/setup-graphic.png" alt="">
+                <img src="{{ asset_location }}media/setup-graphic.png" alt="">
             </div>
             <header class="badge__header">
                 <h3 class="badge__title">Setup</h3>
@@ -101,7 +103,7 @@
 
         <div class="badge">
             <div class="badge__media">
-                <img src="/media/schedule-graphic.png" alt="">
+                <img src="{{ asset_location }}media/schedule-graphic.png" alt="">
             </div>
             <header class="badge__header">
                 <h3 class="badge__title">Schedule</h3>
@@ -112,63 +114,17 @@
         </div>
     </section>
 </section>
-<section class="page__section overlay page__section--grid interaction--load">
+<section class="page__section overlay page__section--grid interaction--load" style="background-image: url('{{ asset_location }}media/background-2.jpg');">
     <header class="section__header">
         <h2 class="section__title">Every Cable Provider, <span class="title--emph">One Search</span></h2>
     </header>
-    <section class="row row--wide grid" id="grid">
-        <div class="grid__item">
-            <img src="media/providers/cox-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/sudden-link-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/xfinity-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/bright-house-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/time-warner-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/metro-cast-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/cable-one-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/bend-broadband-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/armstrong-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/mctv-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/optimum-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/midco-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/atlantic-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/charter-logo.png" class="grid__media">
-        </div>
-        <div class="grid__item">
-            <img src="media/providers/mediacom-logo.png" class="grid__media">
-        </div>
-    </section>
+    {{ providerGrid.grid() }}
 </section>
-<section class="page__section overlay page__section--form interaction--load">
+<section class="page__section overlay page__section--form page__footer interaction--load">
     <header class="row row--wide section__header section__header--align-left">
         <h2 class="section__title">Questions?</h2>
     </header>
-    <form action="" class="form">
+    <form action="" class="form form--condensed">
         <div class="row row--wide">
             <div class="column column--l-2-5">
                 <div class="form__row">

@@ -1,7 +1,173 @@
+{% set asset_location = "../" %}
 {% extends "layout.nunjucks" %}
+{% import "_macros/provider-grid.nunjucks" as providerGrid %}
 
 {% block title %} | Affiliates{% endblock %}
 
 {% block content %}
+{% include "_partials/process-nav.nunjucks" %}
+<p class="row row--wide page__identifier">#75396639</p>
+<header class="row row--wide page__header page-header">
+    <h1 class="page__title page-header__title">Find Services in Your Area</h1>
+    <p class="page-header__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam magni, cumque nostrum unde, accusantium sequi nesciunt repellat quos dolor molestias quasi saepe est. Molestias quisquam eligendi perferendis, veritatis rem cupiditate?</p>
+</header>
+<form action="" class="row row--wide row--wide-form form form--light">
+    <div class="column column--m column--m-padded column--m-1-2">
+        <div class="row form__row">
+            <input type="text" class="form__input" name="address_1" id="address_1">
+            <label for="address_1" class="form__label">Street Address *</label>
+        </div>
+        <div class="row form__row">
+            <input type="text" class="form__input" name="address_2" id="address_2">
+            <label for="address_2" class="form__label">Address Line 2</label>
+        </div>
+        <div class="row form__row">
+            <input type="text" class="form__input" name="zip" id="zip">
+            <label for="zip" class="form__label">Zip Code *</label>
+        </div>
+        <div class="row form__row form__row--checkbox">
+            <input type="checkbox" class="form__checkbox" name="moving-to" id="moving-to">
+            <label for="moving-to" class="form__label">I am moving to the address provided, I do not currently live there.</label>
+        </div>
+        <div class="row form__row form__row--has-icon">
+            <i class="icon icon--calendar icon--light icon--fixed"></i>
+            <input type="text" class="form__input form__date" name="move-date" id="move-date">
+            <label for="move-date" class="form__label">Move Date</label>
+        </div>
+        <div class="row form__row">
+            <input type="text" class="form__input" name="phone" id="phone">
+            <label for="phone" class="form__label">Home Phone Number</label>
+        </div>
+
+        <div class="form__spacer"></div>
+
+        <div class="row form__row">
+            <input type="text" class="form__input" name="num_to_port" id="num_to_port">
+            <label for="num_to_port" class="form__label">Number to Port</label>
+        </div>
+        <div class="row form__row">
+            <input type="text" class="form__input" name="promo" id="promo">
+            <label for="promo" class="form__label">Promotion Code</label>
+        </div>
+
+        <div class="form__spacer"></div>
+
+        <div class="row form__row form__row--checkbox">
+            <input type="checkbox" class="form__checkbox" name="opt-in" id="opt-in">
+            <label for="opt-in" class="form__label">I would like to receive special offers and updates from my cable company.</label>
+        </div>
+    </div>
+    <div class="column column--m column--m-padded column--m-1-2">
+        <div class="row form__row">
+            <div class="column column--m column--m-padded column--m-1-2 form__list form-list form-list--checkbox">
+                <p class="form-list__label">I currently have:</p>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="exist_high-speed" name="exist_high-speed" class="form__checkbox">
+                    <label for="exist_high-speed" class="form__label">High Speed</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="exist_dial-up" name="exist_dial-up" class="form__checkbox">
+                    <label for="exist_dial-up" class="form__label">Dial-up</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="exist_digital-cable" name="exist_digital-cable" class="form__checkbox">
+                    <label for="exist_digital-cable" class="form__label">Digital Cable</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="exist_cable-dvr" name="exist_cable-dvr" class="form__checkbox">
+                    <label for="exist_cable-dvr" class="form__label">Cable DVR</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="exist_digital-phone" name="exist_digital-phone" class="form__checkbox">
+                    <label for="exist_digital-phone" class="form__label">Digital Phone</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="exist_dsl" name="exist_dsl" class="form__checkbox">
+                    <label for="exist_dsl" class="form__label">DSL</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="exist_basic-cable" name="exist_basic-cable" class="form__checkbox">
+                    <label for="exist_basic-cable" class="form__label">Basic Cable</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="exist_cable-hd" name="exist_cable-hd" class="form__checkbox">
+                    <label for="exist_cable-hd" class="form__label">Cable HDTV</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="exist_satellite" name="exist_satellite" class="form__checkbox">
+                    <label for="exist_satellite" class="form__label">Satellite TV</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="exist_cable-home-network" name="exist_cable-home-network" class="form__checkbox">
+                    <label for="exist_cable-home-network" class="form__label">Cable Home Network</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="exist_dont-know" name="exist_dont-know" class="form__checkbox">
+                    <label for="exist_dont-know" class="form__label">I don't know</label>
+                </div>
+            </div>
+            <div class="column column--m column--m-padded column--m-1-2 form__list form-list form-list--checkbox">
+                <p class="form-list__label">I'm interested in:</p>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="interest_high-speed" name="interest_high-speed" class="form__checkbox">
+                    <label for="interest_high-speed" class="form__label">High Speed</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="interest_digital-cable" name="interest_digital-cable" class="form__checkbox">
+                    <label for="interest_digital-cable" class="form__label">Digital Cable</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="interest_dvr" name="interest_dvr" class="form__checkbox">
+                    <label for="interest_dvr" class="form__label">DVR</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="interest_home-network" name="interest_home-network" class="form__checkbox">
+                    <label for="interest_home-network" class="form__label">Home Network</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="interest_wireless-data" name="interest_wireless-data" class="form__checkbox">
+                    <label for="interest_wireless-data" class="form__label">Wireless Data</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="interest_basic-cable" name="interest_basic-cable" class="form__checkbox">
+                    <label for="interest_basic-cable" class="form__label">Basic Cable</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="interest_hdtv" name="interest_hdtv" class="form__checkbox">
+                    <label for="interest_hdtv" class="form__label">HDTV</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="interest_digital-phone" name="interest_digital-phone" class="form__checkbox">
+                    <label for="interest_digital-phone" class="form__label">Digital Phone</label>
+                </div>
+                <div class="form-list__item form-list__item--checkbox">
+                    <input type="checkbox" id="interest_wireless-voice" name="interest_wireless-voice" class="form__checkbox">
+                    <label for="interest_wireless-voice" class="form__label">Wireless Voice</label>
+                </div>
+            </div>
+        </div>
+        <div class="row form__row--boxed">
+            <legend class="form__legend">For Affiliates and Service Providers Only</legend>
+            <div class="row form__row">
+                <select name="store-id" id="store-id" class="form__select">
+                    <option selected="true" disabled="disabled">Store ID</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="2">3</option>
+                </select>
+            </div>
+            <div class="row form__row">
+                <input type="text" class="form__input" name="sales-person-id" id="sales-person-id">
+                <label for="sales-person-id" class="form__label">Sales Person ID</label>
+            </div>
+        </div>
+    </div>
+    <button class="button button--full-width form__button">Next Step</button>
+</form>
+<section class="page__section overlay overlay--light page__section--grid interaction--load">
+    {{ providerGrid.grid("../media/providers/grey/") }}
+</section>
+<section class="page__section overlay page__footer interaction--load">
 {% include "_partials/page-footer.nunjucks" %}
+</section>
 {% endblock %}

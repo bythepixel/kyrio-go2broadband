@@ -1,0 +1,26 @@
+{% set icons = [
+    {
+        "icon": "find",
+        "text": "Find"
+    },
+    {
+        "icon": "select",
+        "text": "Select"
+    },
+    {
+        "icon": "customize",
+        "text": "Customize"
+    },
+    {
+        "icon": "setup",
+        "text": "Setup"
+    },
+    {
+        "icon": "verify",
+        "text": "Verify"
+    },
+    {
+        "icon": "schedule",
+        "text": "Schedule"
+     }
+] %}
