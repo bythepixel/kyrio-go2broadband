@@ -4,11 +4,11 @@
 
 .page__header {
     padding-bottom: 4.8rem;
-    
+
     @include bp--l {
         padding-bottom: 7.2rem;
     }
-    
+
     @include bp--xl {
         padding-bottom: 12.4rem;
     }
@@ -18,14 +18,14 @@
             flex-wrap: nowrap;
         }
     }
-    
+
     .header__container {
         max-width: 43rem;
-        
+
         @include bp(850) {
             max-width: 68rem;
         }
-        
+
         @include bp--xl {
             @include max-width();
             .column {
@@ -38,31 +38,31 @@
 
     .header__content {
         color: $color-light;
-        
+
         p {
             font-size: 1.6rem;
             margin-bottom: 2.0rem;
-            
+
             @include bp--l {
                 font-size: 2.0rem;
             }
-            
+
             @include bp--xl {
                 font-size: 2.8rem;
             }
         }
-        
+
         @include bp--m {
             padding-right: 4.8rem;
         }
-        
+
         @include bp--xl {
             padding-right: 7.2rem;
         }
     }
-    
+
     .form {
-        margin-bottom: 4.2rem; 
+        margin-bottom: 4.2rem;
 
         @include bp--m {
             margin-bottom: 9.2rem;
@@ -81,82 +81,133 @@
     padding-top: 3.6rem;
     padding-bottom: 5.4rem;
     background: $color-white;
-    
+
     @include bp--l {
         padding-top: 12.4rem;
         padding-bottom: 16.4rem;
     }
-    
+
     .section__header {
         color: $color-light-blue;
         padding-bottom: 3.0rem;
-        
+
         @include bp--l {
             padding-bottom: 7.5rem;
         }
     }
-    
+
     &--grid {
         padding-top: 3.9rem;
         padding-bottom: 4.8rem;
-        background-image: url('../media/background-2.jpg');
-        
+
         @include bp--l {
             padding-bottom: 9.0rem;
+
+            &.overlay--light {
+                padding-top: 7rem;
+                padding-bottom: 7rem;
+            }
         }
     }
-    
-    &--form {
-        background-image: url('../media/background-3.jpg');
-        
-        @include bp--l {
-            padding-top: 8.4rem;
-            padding-bottom: 9.0rem;
-        }
-        
-        .form {
-            max-width: 43rem;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 3.6rem;
-            
-            @include bp(850) {
-                max-width: 100%;
-                
-                .column {
-                    display: inline-block;
-                    float: left;
-                    width: 50%;
-                    
-                    + .column {
-                        padding-left: 1px;
-                    }
+}
+
+.page__footer,
+.page-footer {
+    background-image: url('../media/background-3.jpg');
+
+    @include bp--l {
+        padding-top: 8.4rem;
+        padding-bottom: 9.0rem;
+    }
+
+    .form {
+        max-width: 43rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3.6rem;
+
+        @include bp(850) {
+            max-width: 100%;
+
+            .column {
+                display: inline-block;
+                float: left;
+                width: 50%;
+
+                + .column {
+                    padding-left: 1px;
                 }
             }
         }
-        
-        .section__header {
-            padding-bottom: 1.8rem;
-            
-            @include bp--l {
-                padding-bottom: 3.2rem;
-            }
+    }
+
+    .section__header {
+        padding-bottom: 1.8rem;
+
+        @include bp--l {
+            padding-bottom: 3.2rem;
         }
-        
-        .section__footer {
-            font-size: 1.0rem;
-            
-            @include bp--m {
-                font-size: 1.4rem;
-            }
+    }
+
+    .section__footer {
+        font-size: 1.0rem;
+
+        @include bp--m {
+            font-size: 1.4rem;
         }
     }
 }
 
 .section__header {
     text-align: center;
-    
+
     &--align-left {
         text-align: left;
+    }
+}
+
+.page__identifier {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+
+    @include bp--l {
+        font-size: 1.7rem;
+        font-weight: 700;
+    }
+}
+
+.page-header {
+    @at-root .page__identifier + & {
+        margin-top: 3.2rem;
+
+        @include bp--l {
+            margin-top: 4.8rem;
+            padding-bottom: 6.0rem;
+        }
+    }
+
+    @include bp--m {
+        padding-bottom: 4.0rem;
+    }
+
+    &__title {
+        font-family: $font-standard;
+        font-style: normal;
+        font-size: 3.2rem;
+
+        @include bp--m {
+            font-size: 4.8rem;
+        }
+    }
+
+    &__desc {
+        @include bp--m {
+            font-size: 2.0rem;
+        }
+
+        @include bp--l {
+            font-size: 2.8rem;
+        }
     }
 }
