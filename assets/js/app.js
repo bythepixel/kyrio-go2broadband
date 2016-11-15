@@ -2,6 +2,7 @@ import styleSelect from 'styleSelect';
 import { customEventPoly, classListPoly } from './components/polyfill';
 import { formHandling } from './components/form';
 import { pageInit } from './components/load';
+import { datePicker } from './components/datePicker';
 // Shim 'CustomEvent'
 customEventPoly();
 // Shim 'classList' for IE9
@@ -16,3 +17,5 @@ pageInit();
 formHandling();
 // Hook up styleSelect
 styleSelect('.form__select');
+// Run datePicker
+datePicker('.form__date');
