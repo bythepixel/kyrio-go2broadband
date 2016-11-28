@@ -122,6 +122,11 @@
         color: $color-orange;
         font-size: 1.6rem;
         height: 3.4rem;
+        transition: background 0.3s;
+
+        &:hover {
+            background: darken($color-blue, 10%);
+        }
 
         @include bp--m {
             top: 50%;
