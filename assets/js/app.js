@@ -1,6 +1,6 @@
 import styleSelect from 'styleSelect';
 import { customEventPoly, classListPoly } from './components/polyfill';
-import { formHandling } from './components/form';
+import { formHandling, formRevealOnFill } from './components/form';
 import { pageInit } from './components/load';
 import { datePicker } from './components/datePicker';
 // Shim 'CustomEvent'
@@ -11,10 +11,11 @@ classListPoly();
 if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv 11/))) {
   document.querySelector('body').classList.add('ie');
 }
-// Run page init
-pageInit();
+formRevealOnFill();
 // Run form handling
 formHandling();
+// Run page init
+pageInit();
 // Hook up styleSelect
 styleSelect('.form__select');
 // Run datePicker
