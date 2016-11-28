@@ -7,12 +7,16 @@
 
 {% block content %}
 {% include "_partials/process-nav.nunjucks" %}
-<p class="row row--wide page__identifier">#75396639</p>
-<header class="row row--wide page__header page-header">
+<div class="media__loader--holder">
+    <div class="media__loader media__loader--inside"></div>
+    <div class="media__loader media__loader--outside"></div>
+</div>
+<p class="row row--wide page__identifier interaction--load">#75396639</p>
+<header class="row row--wide page__header page-header interaction--load">
     <h1 class="page__title page-header__title">Find Services in Your Area</h1>
     <p class="page-header__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam magni, cumque nostrum unde, accusantium sequi nesciunt repellat quos dolor molestias quasi saepe est. Molestias quisquam eligendi perferendis, veritatis rem cupiditate?</p>
 </header>
-<form action="" class="row row--wide row--wide-form form form--light">
+<form action="" class="row row--wide row--wide-form form form--light interaction--load">
     <div class="column column--m column--m-padded column--m-1-2">
         <div class="row form__row">
             <input type="text" class="form__input" name="address_1" id="address_1">

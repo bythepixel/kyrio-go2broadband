@@ -8,7 +8,7 @@
     transform: translateZ(0) translateY(1.8rem);
     backface-visibility: hidden;
 
-    &.page__header {
+    @at-root .page--main &.page__header {
         transform: none;
     }
 }
