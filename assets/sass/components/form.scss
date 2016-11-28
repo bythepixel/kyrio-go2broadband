@@ -302,7 +302,6 @@
             transform: translate(0, -50%);
             z-index: 2;
             opacity: 0;
-            transition: opacity 0.3s;
 
             @include bp--m {
                 left: 1.9rem;
