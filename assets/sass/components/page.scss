@@ -162,6 +162,33 @@
     }
 }
 
+.page--inner .page__footer {
+    padding-top: 3.6rem;
+    padding-bottom: 3.6rem;
+
+    @include bp--l {
+        .section__footer .footer__brand {
+            margin-bottom: 4.8rem;
+        }
+
+        p {
+            margin-bottom: 0.6rem;
+        }
+
+        a {
+            padding: 0 0.6rem;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
 .section__header {
     text-align: center;
 
