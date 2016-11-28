@@ -11,6 +11,7 @@ classListPoly();
 if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv 11/))) {
   document.querySelector('body').classList.add('ie');
 }
+// Bind form reveal
 formRevealOnFill();
 // Run form handling
 formHandling();
