@@ -20,12 +20,13 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
 
-    @include bp--m {
+    @include bp--l {
         font-size: $base-font-size;
     }
-    
+
     > header,
-    > section {
+    > section,
+    > .page__identifier {
         padding-left: 3.6rem;
         padding-right: 3.6rem;
     }

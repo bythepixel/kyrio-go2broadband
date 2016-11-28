@@ -6,23 +6,60 @@
     max-width: 43rem;
     margin-left: auto;
     margin-right: auto;
-    
+
     @include bp--m {
         max-width: 100%;
         margin-left: 0;
         margin-right: 0;
     }
-    
-    @include bp--xl {
-        .column + .column {
-            padding-left: 1px;
-        }
+
+    &--condensed .form__button.button--full-width {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
 .form__row {
     position: relative;
     margin-bottom: 1px;
+
+    &--boxed {
+        padding: 0.9rem;
+        border: 1px solid darken($color-semi-light, 8%);
+
+        @include bp--m {
+            padding: 1.2rem;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        font-size: 1.2rem;
+        top: 1.2rem;
+        right: 1.2rem;
+
+        @include bp--l {
+            top: 2.4rem;
+            right: 2.4rem;
+            font-size: 2.0rem;
+        }
+    }
+}
+
+.form__legend {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: lighten($color-med, 8%);
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+
+    @include bp--m {
+        margin-bottom: 1.2rem;
+    }
+
+    @include bp--l {
+        font-size: 1.4rem;
+    }
 }
 
 .form__input,
@@ -30,7 +67,7 @@
 .form__textarea,
 .style-select {
     border-radius: 0;
-    @include bp--m {
+    @include bp--l {
         font-size: 2.0rem;
     }
 }
@@ -48,8 +85,13 @@
     outline: 0;
     margin-bottom: 0;
     font-family: $font-standard;
-    
-    @include bp--m {
+
+    @at-root .form--light & {
+        background: $color-semi-light;
+        transition: background 0.3s;
+    }
+
+    @include bp--l {
         padding: 2.3rem;
     }
 
@@ -58,22 +100,37 @@
     }
 }
 
+.form--light .form__input:focus,
+.form--light .form__select:focus {
+    background: #FAFAFA;
+}
+
 .form__group {
-    display: table-row;
+    display: table;
+    width: 100%;
 }
 
 .form__group .group__item {
-    color: $color-light;
+    color: $color-med;
     display: table-cell;
     vertical-align: middle;
 
     &--checkbox {
         height: 4.4rem;
-        background: $color-blue;
         position: relative;
+        background: $color-light;
         width: 100%;
-        
-        @include bp--m {
+
+        @at-root .overlay & {
+            color: $color-light;
+            background: $color-blue;
+        }
+
+        @at-root .form--light & {
+            background: $color-semi-light;
+        }
+
+        @include bp--l {
             height: 7.1rem;
         }
     }
@@ -83,16 +140,74 @@
     }
 }
 
+.form__row--checkbox {
+    color: $color-med;
+    height: 4.4rem;
+    position: relative;
+    background: $color-light;
+    width: 100%;
+
+    .form__checkbox + .form__label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    @at-root .form--light & {
+        background: $color-semi-light;
+    }
+
+    @include bp--l {
+        height: 7.1rem;
+    }
+}
+
 .form__input {}
 .form__textarea {
-    height: 14.1rem;
+    height: 7.5rem;
+    @include bp--l {
+        height: 14.1rem;
+    }
 }
 
 .form__button {
     padding: 1.0rem 1.1rem 1.2rem;
-    
-    @include bp--m {
+
+    @include bp--l {
         padding: 1.7rem 1.8rem 1.8rem;
+    }
+
+    &.button--full-width {
+        margin-top: 4.8rem;
+
+        @include bp--l {
+            margin-top: 6.8rem;
+        }
+
+        @at-root .column & {
+            padding: 0.8rem;
+
+            @include bp--l {
+                padding: 1.7rem 1.8rem;
+            }
+        }
+
+        @at-root .form > & {
+            padding: 1.2rem 0.9rem;
+
+            @include bp--l {
+                padding: 3.2rem 1.8rem;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 4.8rem;
+
+            @include bp--l {
+                margin-bottom: 9.2rem;
+            }
+        }
     }
 }
 
@@ -103,8 +218,8 @@
     top: 1.2rem;
     left: 1.2rem;
     transition: top 0.1s, left 0.1s;
-    
-    @include bp--m {
+
+    @include bp--l {
         top: 2.4rem;
         left: 2.4rem;
     }
@@ -118,17 +233,16 @@
     top: 0.2rem;
     left: 0.4rem;
     transform: translateZ(0);
-    
-    @include bp--m {
+
+    @include bp--l {
         font-size: 1.2rem;
     }
 }
 
 .form__checkbox {
     display: none;
-    
+
     + .form__label {
-        color: $color-light;
         font-size: 1.0rem;
         padding-left: 3.0rem;
         padding-right: 2.4rem;
@@ -136,11 +250,27 @@
         left: 0;
         position: relative;
         z-index: 1;
+        @at-root .overlay & {
+            color: $color-light;
+
+            &:before {
+                background: $color-light;
+            }
+        }
+
+        @at-root .form--light & {
+            color: $color-semi-dark;
+        }
+
         @include bp--m {
+            font-size: 1.1rem;
+        }
+
+        @include bp--l {
             font-size: 1.6rem;
             padding-left: 4.8rem;
         }
-        
+
         &:hover {
             cursor: pointer;
         }
@@ -149,19 +279,19 @@
             content: "";
             position: absolute;
             top: 50%;
-            left: 0.8rem;
+            left: 1rem;
             padding: 0.5rem;
-            background: $color-light;
+            background: $color-white;
             transform: translate(0, -50%);
             z-index: 1;
-            
-            @include bp--m {
+
+            @include bp--l {
                 left: 1.6rem;
                 padding: 0.9rem;
                 border-radius: 0.2rem;
             }
         }
-        
+
         &:after {
             content: "";
             position: absolute;
@@ -173,7 +303,7 @@
             z-index: 2;
             opacity: 0;
             transition: opacity 0.3s;
-            
+
             @include bp--m {
                 left: 1.9rem;
                 padding: 0.6rem;
@@ -181,10 +311,78 @@
             }
         }
     }
-    
+
     &:checked + .form__label:after {
         transform: translate(0, -50%) translateZ(0);
         opacity: 1;
+    }
+}
+
+.form__spacer {
+    display: block;
+    margin-top: 3.6rem;
+
+    @include bp--l {
+        margin-top: 4.8rem;
+    }
+}
+
+.form-list {
+    margin-bottom: 2.4rem;
+
+    &.column--m {
+        margin-top: 3.6rem;
+
+        @include bp--m {
+            margin-top: 0;
+        }
+    }
+
+    &__label {
+        color: $color-semi-dark;
+        font-weight: 700;
+        margin-bottom: 1.8rem;
+        font-size: 1.4rem;
+
+        @include bp--l {
+            font-size: 2.0rem;
+            margin-bottom: 2.8rem;
+        }
+    }
+
+    &__item {
+        &--checkbox {
+            .form__checkbox + .form__label {
+                padding-right: 0;
+                padding-left: 2rem;
+                margin: 0.8rem 0;
+
+                @include bp--l {
+                    padding-left: 3.6rem;
+                    margin: 1.2rem 0;
+                }
+
+                &:before {
+                    left: 0;
+                    background: $color-med-light;
+                    padding: 0.6rem;
+
+                    @include bp--l {
+                        padding: 0.9rem;
+                    }
+                }
+
+                &:after {
+                    left: 0.3rem;
+                    padding: 0.3rem;
+
+                    @include bp--l {
+                        left: 0.4rem;
+                        padding: 0.5rem;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -210,7 +408,7 @@ select[data-ss-uuid] {
 
     .ss-selected-option {
         width: 100%;
-        
+
         &:after {
             content: "▾";
             position: absolute;
@@ -220,8 +418,8 @@ select[data-ss-uuid] {
             color: $color-dark;
             transform: translateZ(0);
             transition: transform 0.3s;
-            
-            @include bp--m {
+
+            @include bp--l {
                 top: 2.3rem;
                 right: 2.23rem;
             }
@@ -244,7 +442,7 @@ select[data-ss-uuid] {
             transform: translateZ(0);
             transition: background-color 0.3s, color 0.3s;
             margin-bottom: 1px;
-            
+
             &.highlighted {
                 background-color: $color-blue;
                 color: $color-light;
@@ -254,9 +452,13 @@ select[data-ss-uuid] {
                 background-color: $color-blue;
                 color: $color-light;
             }
+
+            &.disabled {
+                display: none;
+            }
         }
     }
-    
+
     &.open {
         .ss-dropdown {
             pointer-events: auto;

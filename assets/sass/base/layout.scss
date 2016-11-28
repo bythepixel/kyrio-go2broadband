@@ -8,11 +8,23 @@
 
     &--wide {
         @include max-width(true);
-        
+
         .row--wide {
             padding-left: 0;
             padding-right: 0;
         }
+
+        &.row--wide-form {
+            padding-left: 4.2rem;
+            padding-right: 4.2rem;
+            @include max-width(true);
+        }
+    }
+
+    &--full-width {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .column {
@@ -28,25 +40,44 @@
             &-1-2 {
                 width: 50%;
             }
+
+            &-padded {
+                &:nth-child(odd) {
+                    padding-right: 3.7rem;
+                }
+                &:nth-child(even) {
+                    padding-left: 3.7rem;
+                }
+
+                & & {
+                    &:nth-child(odd) {
+                        padding-right: 2.4rem;
+                    }
+                    &:nth-child(even) {
+                        padding-left: 2.4rem;
+                    }
+                }
+            }
         }
     }
 
-    // @include bp--l {
-    //     .column--l {
-    //         display: inline-block;
-    //         float: left;
-    //         
-    //         &-1-2 {
-    //             width: 50%;
-    //         }
-    //         
-    //         &-2-5 {
-    //             width: 40%;
-    //         }
-    //         
-    //         &-3-5 {
-    //             width: 60%;
-    //         }
-    //     }
-    // }
+    @include bp--l {
+        .column--m-padded {
+            &:nth-child(odd) {
+                padding-right: 6.8rem;
+            }
+            &:nth-child(even) {
+                padding-left: 6.8rem;
+            }
+
+            & & {
+                &:nth-child(odd) {
+                    padding-right: 3.6rem;
+                }
+                &:nth-child(even) {
+                    padding-left: 3.6rem;
+                }
+            }
+        }
+    }
 }

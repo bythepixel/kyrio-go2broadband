@@ -30,7 +30,7 @@ const fadeIn = (load, loading, loaded) => {
                     // Add the loading class
                     target.classList.add(loading);
                     // Remove style attribute from element
-                    target.removeAttribute('style');
+                    target.style.opacity = 1;
                     // Add the loaded class
                     target.classList.add(loaded);
                     // After half a second, remove all classes
@@ -38,7 +38,7 @@ const fadeIn = (load, loading, loaded) => {
                         target.classList.remove(load,loading,loaded);
                     }, 500);
                     // If we're on the last item
-                    if (i === last) {
+                    if (i === last && loader) {
                         // Hide the loader
                         loader.style.opacity = 0;
                         setTimeout(() => loader.parentNode.removeChild(loader), 400);
@@ -61,29 +61,32 @@ const onWindowResize = bp => {
     const video = document.querySelectorAll('video')[0];
     // Set paused to false
     let paused = false;
-    // Listen for window resize
-    window.addEventListener('resize', () => {
-        // If window outerWidth is less than bp and not paused
-        if (window.outerWidth < bp && !paused) {
-            // Pause the video
-            video.pause();
-            // Set paused to true
-            paused = true;
-            // Exit
-            return;
-        }
-        // If window outerWidth is greater than bp and paused
-        if (window.outerWidth >= bp && paused) {
-            // Play video
-            video.play();
-            // Set paused to false
-            paused = false;
-        }
-    });
-    //  Create a new CustomEvent
-     let ev = new CustomEvent('resize');
-     // Dispatch the event
-     window.dispatchEvent(ev);
+    // If we have a video
+    if (video) {
+        // Listen for window resize
+        window.addEventListener('resize', () => {
+            // If window outerWidth is less than bp and not paused
+            if (window.outerWidth < bp && !paused) {
+                // Pause the video
+                video.pause();
+                // Set paused to true
+                paused = true;
+                // Exit
+                return;
+            }
+            // If window outerWidth is greater than bp and paused
+            if (window.outerWidth >= bp && paused) {
+                // Play video
+                video.play();
+                // Set paused to false
+                paused = false;
+            }
+        });
+        //  Create a new CustomEvent
+         let ev = new CustomEvent('resize');
+         // Dispatch the event
+         window.dispatchEvent(ev);
+    }
 }
 
 /**

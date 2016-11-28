@@ -17,7 +17,10 @@ $base-lineheight   : 1.2;
 // COLORS
 // *
 $color-dark       : #0C0C0C;
+$color-semi-dark  : lighten($color-dark, 10%);
 $color-med        : #a5a4a3;
+$color-med-light  : lighten($color-med, 22%);
+$color-semi-light : #ECECEC;
 $color-light      : #F2F2F2;
 $color-white      : #FFFFFF;
 $color-black      : #000000;
@@ -45,6 +48,19 @@ $bp--xl : 1200;
 $font-standard: 'ProximaNova', sans-serif;
 $font-heading : 'ArgentCF', sans-serif;
 $font-emph    : 'Realtime', sans-serif;
+$font-icons   : 'KyrioIcons';
+
+// **
+// ICONS
+// *
+$icon-cart: "\e900";
+$icon-find: "\e901";
+$icon-select: "\e902";
+$icon-setup: "\e903";
+$icon-verify: "\e904";
+$icon-schedule: "\e905";
+$icon-customize: "\e906";
+$icon-calendar: "\e907";
 
 // **
 // SPEC CHARS

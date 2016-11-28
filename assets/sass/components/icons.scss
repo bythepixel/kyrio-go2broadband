@@ -1,0 +1,68 @@
+///////////
+// Icons //
+///////////
+
+.icon {
+    font-family: $font-icons !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &--light {
+        color: $color-med;
+    }
+}
+
+.icon--cart {
+    &:before {
+        content: $icon-cart;
+    }
+}
+
+.icon--calendar {
+    &:before {
+        content: $icon-calendar;
+    }
+}
+
+.icon--find {
+    transform: translateX(0.1em);
+    &:before {
+        content: $icon-find;
+    }
+}
+
+.icon--select {
+    &:before {
+        content: $icon-select;
+    }
+}
+
+.icon--setup {
+    &:before {
+        content: $icon-setup;
+    }
+}
+
+.icon--verify {
+    &:before {
+        content: $icon-verify;
+    }
+}
+
+.icon--schedule {
+    &:before {
+        content: $icon-schedule;
+    }
+}
+
+.icon--customize {
+    &:before {
+        content: $icon-customize;
+    }
+}

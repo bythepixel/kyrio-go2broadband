@@ -10,34 +10,29 @@
     font-size: 1.8rem;
     text-transform: uppercase;
     color: $color-light;
-    // transition: color 0.3s;
     cursor: pointer;
     line-height: 1.2;
-    
-    @include bp--m {
+    @include bp--l {
         font-size: 3.0rem;
     }
-    
+
     &:hover {
-        // transform: translateZ(0);
         color: $color-dark;
     }
-    
+
     &--full-width {
         padding: 0.6rem 1.1rem;
         width: 100%;
         text-align: center;
-        
         @include bp--m {
             padding: 1.7rem;
         }
     }
-    
+
     &--square {
         height: 4.4rem;
         width: 4.4rem;
-        
-        @include bp--m {
+        @include bp--l {
             height: 7.0rem;
             width: 7.0rem;
         }
