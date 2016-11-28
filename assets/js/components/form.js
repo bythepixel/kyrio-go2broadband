@@ -1,8 +1,14 @@
+/**
+ * Listen for input events on form elements to
+ * handle the label placeholder change
+ * @return void
+ */
  const formHandling = () => {
      // Get the text inputting form els
      const formEls = document.querySelectorAll('.form__input, .form__textarea');
-
+     // If no form els
      if (!formEls.length) {
+         // Exit
          return;
      }
 
@@ -44,6 +50,15 @@
      });
  }
 
+/**
+ * Reveal element when form element is filled/checked
+ *
+ * Ex:
+ * <input type="checkbox" class="interaction--form-reveal-on-fill" data-target=".target" name="moving-to" id="moving-to">
+ * <div class="target"></div>
+ *
+ * @return void
+ */
  const formRevealOnFill = () => {
     //  Get the reveal elements
      const formEls = document.querySelectorAll('.interaction--form-reveal-on-fill');
