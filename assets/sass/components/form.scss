@@ -217,7 +217,7 @@
     display: block;
     top: 1.2rem;
     left: 1.2rem;
-    transition: top 0.1s, left 0.1s;
+    transition: top 0.2s ease-out, left 0.2s ease-out, font-size 0.2s ease-out;
 
     @include bp--l {
         top: 2.4rem;
