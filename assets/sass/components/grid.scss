@@ -5,19 +5,25 @@
 .grid {
     @extend %clearfix;
     text-align: center;
-    
+
     @include bp--m {
         transition: padding-left 0.3s, padding-right 0.3s;
         transition-timing-function: ease-in;
-        
+
         &.row--wide {
             padding-left: 4.8rem;
             padding-right: 4.8rem;
-            
-            &.interaction--scale {
+
+            &.interaction--attention {
                 padding-left: 0 !important;
                 padding-right: 0 !important;
                 transform: translateZ(0);
+
+                @at-root .page--inner & {
+                    padding-left: 4.8rem !important;
+                    padding-right: 4.8rem !important;
+                    opacity: 1;
+                }
             }
         }
     }
@@ -31,15 +37,15 @@
     vertical-align: middle;
     position: relative;
     height: 3.6rem;
-    
+
     @include bp--s {
         height: 4.8rem;
     }
-    
+
     @include bp--m {
         height: 7.8rem;
     }
-    
+
     img {
         position: absolute;
         top: 50%;
@@ -48,20 +54,20 @@
         max-height: 3.6rem;
         margin-left: auto;
         margin-right: auto;
-        
+
         @include bp--s {
             max-height: 4.8rem;
         }
-        
+
         @include bp--m {
             max-height: 6.4rem;
         }
-        
+
         @include bp--m {
             max-height: 7.8rem;
         }
     }
-    
+
     @include bp--l {
         height: 9.8rem;
         width: 17%;

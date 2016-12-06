@@ -106,16 +106,11 @@
 
 @mixin max-width($wide: false) {
     @if $wide {
-        max-width: 128.4rem;
-        
+        max-width: 140.4rem;
+
         @include bp--m {
-            padding-left: 2.4rem;
-            padding-right: 2.4rem;
-        }
-        
-        @include bp--l {
-            padding-left: 3.6rem;
-            padding-right: 3.6rem;
+            padding-left: 9.6rem;
+            padding-right: 9.6rem;
         }
     }
     @else {

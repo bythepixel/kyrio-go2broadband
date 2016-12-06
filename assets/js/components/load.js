@@ -146,7 +146,10 @@ const applyClassOnScroll = (item, active) => {
 const pageInit = () => {
     fadeIn('interaction--load', 'interaction--loading', 'interaction--loaded');
     onWindowResize(800)
-    applyClassOnScroll(document.getElementById('grid'), 'interaction--scale');
+    const grid = document.getElementById('grid');
+    if (grid) {
+        applyClassOnScroll(grid, 'interaction--attention');
+    }
 }
 // Export so we can use as a module
 export { pageInit };

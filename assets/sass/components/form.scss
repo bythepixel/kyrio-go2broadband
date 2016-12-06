@@ -72,6 +72,21 @@
     }
 }
 
+.form__hide {
+    max-height: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, margin-bottom 0.3s ease-in-out, opacity 0.3s;
+
+    &.form__reveal {
+        transform: translateZ(0);
+        max-height: 30rem;
+        opacity: 1;
+        margin-bottom: 1px;
+    }
+}
+
 .form__input,
 .form__select,
 .form__textarea,
@@ -217,7 +232,7 @@
     display: block;
     top: 1.2rem;
     left: 1.2rem;
-    transition: top 0.1s, left 0.1s;
+    transition: top 0.2s ease-out, left 0.2s ease-out, font-size 0.2s ease-out;
 
     @include bp--l {
         top: 2.4rem;
@@ -302,7 +317,6 @@
             transform: translate(0, -50%);
             z-index: 2;
             opacity: 0;
-            transition: opacity 0.3s;
 
             @include bp--m {
                 left: 1.9rem;

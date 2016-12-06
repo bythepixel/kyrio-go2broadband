@@ -38,3 +38,40 @@
         }
     }
 }
+
+.button--swipe {
+    .swipe-holder {
+        position: relative;
+        text-align: left;
+
+        span {
+            position: absolute;
+            width: 0;
+            top: 0;
+            left: 0;
+            height: 100%;
+            overflow: hidden;
+            transition: width 0.2s;
+
+            &:before {
+                content: attr(data-text);
+                z-index: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                color: $color-dark;
+            }
+        }
+    }
+
+    &:hover {
+        color: $color-white;
+
+        .swipe-holder span {
+            width: 100%;
+            transform: translateZ(0);
+        }
+    }
+}

@@ -30,7 +30,7 @@
         <meta name="msapplication-TileImage" content="{{ asset_location }}favicon/favicon-144.png">
         <meta name="msapplication-config" content="{{ asset_location }}favicon/browserconfig.xml">
     </head>
-    <body>
+    <body class="page--{{ page }}">
         {% block content %}{% endblock %}
         <script src="{{ asset_location }}js/app.js" charset="utf-8"></script>
     </body>
