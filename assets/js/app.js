@@ -1,6 +1,6 @@
 import styleSelect from 'styleSelect';
 import { customEventPoly, classListPoly } from './components/polyfill';
-import { formHandling, formRevealOnFill } from './components/form';
+import { formHandling, formRevealOnFill, formCheckboxValReplace } from './components/form';
 import { pageInit } from './components/load';
 import { datePicker } from './components/datePicker';
 // Shim 'CustomEvent'
@@ -15,6 +15,8 @@ if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgen
 formRevealOnFill();
 // Run form handling
 formHandling();
+// Replace checkbox values with true/false values on submit
+formCheckboxValReplace();
 // Run page init
 pageInit();
 // Hook up styleSelect
