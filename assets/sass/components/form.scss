@@ -450,6 +450,7 @@ select[data-ss-uuid] {
         pointer-events: none;
         border: 0;
         transition: opacity 0.3s;
+        display: none;
 
         .ss-option {
             width: 100%;
@@ -478,6 +479,7 @@ select[data-ss-uuid] {
             pointer-events: auto;
             transform: translateZ(0);
             opacity: 1;
+            display: block;
         }
 
         .ss-selected-option::after {
