@@ -169,17 +169,28 @@ const formCheckboxValReplace = () => {
  * @return {void}
  */
 const mapCheckboxBoolValues = (form, checkboxes) => {
+    // Loop the checkboxes
     for (let i = 0; i < checkboxes.length; i++) {
+        // Cache the current checkbox
         let checkbox = checkboxes[i];
 
+        // If the checkbox is checked
         if (checkbox.checked) {
+            // Change the value to true
             checkbox.value = true;
+        // If the checkbox is not checked
         } else {
+            // **
+            // We have to set the checked value to true here. Browser default
+            // behavior is to ignore unchecked checkboxes. In order to submit an
+            // unchecked checkbox with a value of false, we have to set it to
+            // checked and attach the value to it.
+            // *
             checkbox.checked = true;
             checkbox.value = false;
         }
     }
-
+    // Submit the form normally
     form.submit();
 };
 // Export so we can use as a module
