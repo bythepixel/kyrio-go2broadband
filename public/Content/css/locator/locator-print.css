@@ -1,0 +1,118 @@
+/*-----------------------------------------------------------------------------------------------------------------------------------
+/* Print Styles
+/*
+/* This file contains all the [ LAYOUT & STYLES ] for the 
+/*
+/*      Confirmation View
+/*
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+
+@media print {
+    
+    /* Set the margin for the printed page */
+    @page {
+        margin: 2cm;
+    }
+    
+    /* Prevent images from bleeding over the edge of the printed page */
+    img {
+        max-width: 100% !important;
+    }
+
+    /* Set the font for the printed page */
+    body {
+        font: 9pt helvetica;
+    }
+
+    /* Prevent tables from bleeding over the edge of the printed page */
+    table[id=tblOfferReview] {
+        width: 100%;
+    }
+    
+    /* Align the prices and totals to the right of the table cell */
+    table[id=tblOfferReview] td {
+        text-align: right;        
+    }
+    
+    /* Style the offer category name */
+    th.h2 {
+        text-align: left;
+        font-size: 11pt;
+    }
+
+    /* Style the table headers for monthly and one time fee */
+    th.h4 {
+        text-align: right;        
+    }
+
+    /* Styles the name of the offer */
+    th.locator-offer-review-header {
+        text-align: left;
+        padding-top: 0.25cm;
+        padding-left: 0.25cm;
+    }
+
+    /* Styles the names of the selected customizations for the offer */    
+    th.locator-offer-review-customization-name {
+        padding-left: 0.5cm;
+        text-align: left;
+        font-weight: normal;        
+    }
+   
+    /* Confirmation section header style */
+    div.h3 {
+        font-weight: bold;
+        font-size: 11pt;
+        padding-bottom: 0.25cm;
+    }
+    
+    /* Confirmation description style */
+    span.h4 {
+        font-weight: bold;
+        padding-left: 0.5cm;
+    }
+
+    /* Horizontal line styles */
+    hr {
+        margin-top: 0.5cm;
+        margin-bottom: 0.5cm;
+    }
+
+    /* Follow up message styles */
+    div > p {
+        padding-left: 0.5cm;
+    }
+
+    /* Center the customer appreciation message */
+    div[id=divInstructionMessage] > div {        
+        text-align: center;
+    }
+
+    /* Center the mso logo at the top of the page */
+    div[id=divMSOLogo] {        
+        text-align: center;
+    }
+    
+    /* Set the width of the customer information table*/
+    table[id=tblCustomerInformation] {
+        width: 60%;        
+    }
+
+    /* Align the cells left */
+    table[id=tblCustomerInformation] tr {
+        text-align: left !important;        
+    }
+
+    /* Bold the header for each table row */
+    table[id=tblCustomerInformation] td:first-child {
+        font-weight: bold !important;
+        padding-left: 0.5cm;     
+    }
+
+    /* Style the G2B logo at the bottom of the email */
+    div[id=divG2BLogoPrint] {
+        width: 50%;        
+        bottom: 0;
+        position: absolute;
+    }
+}
