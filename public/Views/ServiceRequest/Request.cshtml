@@ -1,0 +1,274 @@
+﻿
+@model G2B.Locator.Models.ServiceRequest
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Look for offers</title>
+    <meta name="description" content="Shop for broadband cable services in your area. See plans, prices, and schedule your service.">
+    <link rel="shortcut icon" href="~/Content/favicon/favicon.ico" />
+    <link rel="icon" sizes="16x16 32x32 64x64" href="~/Content/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="196x196" href="~/Content/favicon/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="160x160" href="~/Content/favicon/favicon-160.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Content/favicon/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="~/Content/favicon/favicon-64.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/favicon/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/favicon/favicon-16.png" />
+    <link rel="apple-touch-icon" href="~/Content/favicon/favicon-57.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="~/Content/favicon/favicon-114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="~/Content/favicon/favicon-72.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="~/Content/favicon/favicon-144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="~/Content/favicon/favicon-60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="~/Content/favicon/favicon-120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Content/favicon/favicon-76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="~/Content/favicon/favicon-152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/favicon/favicon-180.png" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="~/Content/favicon/favicon-144.png" />
+    <meta name="msapplication-config" content="~/Content/favicon/browserconfig.xml" />
+
+    @Styles.Render("~/Content/media/publiccss")
+
+    @* This is added to allow us to use the bootstrap modal without interfering with the styles from By The Pixel *@
+    @Styles.Render("~/Content/css/bootstrapmodalcss")
+</head>
+<body>
+    <div class="media__loader--holder">
+        <div class="media__loader media__loader--inside"></div>
+        <div class="media__loader media__loader--outside"></div>
+    </div>
+
+    <header class="page__header overlay interaction--load">
+        <div class="overlay__media">
+            <video playsinline autoplay muted loop class="media__video" controls="false">
+                <source src="~/Content/media/videos/HeroBG.webm" type="video/webm">
+                <source src="~/Content/media/videos/HeroBG.mp4" type="video/mp4">
+            </video>
+            <div class="media__video--fallback"></div>
+        </div>
+        <nav class="row row--wide nav nav--main">
+            <div class="nav__brand">
+                <img src="~/Content/media/go2-broadband-logo.png" width="312" alt="Kyrio - GO2Broadband">
+                <p>Cable Service Locator</p>
+            </div>
+        </nav>
+        <div class="row header__container">
+            <div class="header__content column">
+                <h1 class="page__title">Shop for <span class="color--orange">broadband</span> cable services in your area.</h1>
+                <p>See plans, prices, and schedule your service.</p>
+            </div>
+            <div class="column">
+                @using (Html.BeginForm("Index", "ServiceRequest", FormMethod.Post, new { @id = "frmServiceRequest", @class = "form" }))
+                {
+                    <div class="row form__row">
+                        @Html.TextBoxFor(m => m.RequestAddress.AddressLine, new { id = "RequestAddress_AddressLine", @class = "form__input" })
+                        @Html.LabelFor(m => m.RequestAddress.AddressLine, "Enter your street address", new { @class = "form__label" })
+                        @Html.ValidationMessageFor(m => m.RequestAddress.AddressLine, "", new { @class = "validation__error" })
+                    </div>
+                    <div class="row form__row">
+                        @Html.TextBoxFor(m => m.RequestAddress.Suite, new { id = "RequestAddress_Suite", @class = "form__input" })
+                        @Html.LabelFor(m => m.RequestAddress.Suite, "Address line 2", new { @class = "form__label" })
+                        @Html.ValidationMessageFor(m => m.RequestAddress.Suite, "", new { @class = "validation__error" })
+                    </div>
+                    <div class="row form__row">
+                        @Html.TextBoxFor(m => m.RequestAddress.Zip, new { id = "RequestAddress_Zip", @class = "form__input" })
+                        @Html.LabelFor(m => m.RequestAddress.Zip, "Zip code", new { @class = "form__label" })
+                        @Html.ValidationMessageFor(m => m.RequestAddress.Zip, "", new { @class = "validation__error" })
+                    </div>
+                    @*<div class="row form__row">
+                            <select name="services" id="services" class="form__select">
+                                <option value="all">All Cable Services</option>
+                                <option value="some">Some Cable Services</option>
+                                <option value="none">No Cable Services</option>
+                            </select>
+                        </div>*@
+                    <div class="form__row">
+                        <div class="row form__group">
+                            <div class="group__item group__item--checkbox">
+                                @*@Html.CheckBoxFor(m => m.PrivacyNotice, new { id = "privacyNotice", @class = "form__checkbox" })
+                                    @Html.LabelFor(m => m.PrivacyNotice, "I would like to receive special offers and updates from my cable company.", new { @class = "form__label" })*@
+
+                                <input type="checkbox" class="form__checkbox" name="privacyNotice" id="privacyNotice">
+                                <label for="privacyNotice" class="form__label">I would like to receive special offers and updates from my cable company.</label>
+
+
+                            </div>
+                            <div class="group__item group__item--button">
+                                <button class="button form__button button--square" data-locator-test="btnGo">Go</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </header>
+
+    <section class="page__section interaction--load">
+        <header class="section__header">
+            <h2 class="section__title">Get Connected. <span class="title--emph">Faster</span></h2>
+        </header>
+        <section class="row section__content badge__collection">
+            <div class="badge">
+                <div class="badge__media">
+                    <img src="~/Content/media/search-graphic.png" alt="">
+                </div>
+                <header class="badge__header">
+                    <h3 class="badge__title">Search</h3>
+                </header>
+                <section class="badge__content">
+                    <p>Enter your address and zip code to find the cable provider that serves your area.</p>
+                </section>
+            </div>
+            <div class="badge__divider">
+                <img class="badge__divider--horiz" src="~/Content/media/badge-divider-horiz.png">
+                <img class="badge__divider--vert" src="~/Content/media/badge-divider-vert.png">
+            </div>
+
+            <div class="badge">
+                <div class="badge__media">
+                    <img src="~/Content/media/setup-graphic.png" alt="">
+                </div>
+                <header class="badge__header">
+                    <h3 class="badge__title">Setup</h3>
+                </header>
+                <section class="badge__content">
+                    <p>Compare plans and choose the one that fits your needs.</p>
+                </section>
+            </div>
+            <div class="badge__divider">
+                <img class="badge__divider--horiz" src="~/Content/media/badge-divider-horiz.png">
+                <img class="badge__divider--vert" src="~/Content/media/badge-divider-vert.png">
+            </div>
+            <div class="badge">
+                <div class="badge__media">
+                    <img src="~/Content/media/schedule-graphic.png" alt="">
+                </div>
+                <header class="badge__header">
+                    <h3 class="badge__title">Schedule</h3>
+                </header>
+                <section class="badge__content">
+                    <p>Select the date and time you’d like to schedule your installation.</p>
+                </section>
+            </div>
+        </section>
+    </section>
+
+    <section class="page__section overlay page__section--grid interaction--load">
+        <header class="section__header">
+            <h2 class="section__title">Every Cable Provider, <span class="title--emph">One Search</span></h2>
+        </header>
+        <section class="row row--wide grid" id="grid">
+            <div class="grid__item">
+                <img src="~/Content/media/providers/cox-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/sudden-link-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/xfinity-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/bright-house-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/time-warner-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/metro-cast-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/cable-one-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/bend-broadband-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/armstrong-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/mctv-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/optimum-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/midco-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/atlantic-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/charter-logo.png" class="grid__media">
+            </div>
+            <div class="grid__item">
+                <img src="~/Content/media/providers/mediacom-logo.png" class="grid__media">
+            </div>
+        </section>
+    </section>
+
+    <section class="page__section overlay page__section--form interaction--load">
+        <header class="row row--wide section__header section__header--align-left">
+            <h2 class="section__title">Questions?</h2>
+        </header>
+        <form action="" class="form">
+            <div class="row row--wide">
+                <div class="column column--l-2-5">
+                    <div class="form__row">
+                        <input type="text" id="name" name="name" class="form__input">
+                        <label for="name" class="form__label">Name</label>
+                    </div>
+                    <div class="form__row">
+                        <input type="email" id="email" name="email" class="form__input">
+                        <label for="email" class="form__label">Email</label>
+                    </div>
+                    <div class="form__row">
+                        <input type="text" id="captcha" name="captcha" class="form__input">
+                        <label for="captcha" class="form__label">2 + 10 = ?</label>
+                    </div>
+                </div>
+                <div class="column column--l-3-5">
+                    <div class="form__row">
+                        <textarea name="text" id="text" class="form__textarea"></textarea>
+                        <label for="text" class="form__label">Message</label>
+                    </div>
+                    <button class="button button--full-width form__button">Send</button>
+                </div>
+            </div>
+        </form>
+        <footer class="row--wide section__footer">
+            <p>Powered by</p>
+            <div class="footer__brand">
+                <img src="~/Content/media/kyrio-logo.png" width="212" alt="Kyrio - GO2Broadband">
+            </div>
+            
+            <p>Copyright Kyrio(TM), Inc. @DateTime.Now.Year. All rights reserved.</p>
+            <p><a href="#" data-toggle="modal" data-target="#modalPrivacy">Privacy Policy</a> | <a href="#" data-toggle="modal" data-target="#modalTermsOfUse">Terms of Use</a></p>
+
+        </footer>
+    </section>
+
+    <div id="divPrivacy">
+        @Html.Partial("Partial/_PrivacyInformation")
+    </div>
+
+    <div id="divTermsOfUse">
+        @Html.Partial("Partial/_TermsOfUse")
+    </div>
+
+    <script src="~/Content/js/app.js" charset="utf-8"></script>
+    
+    @* This is added to allow us to use our mvc server side validation rules, using the unobtrusive js valdation *@
+    @Scripts.Render("~/Scripts/jquery")
+
+    @* This is added to allow us to use the bootstrap modal without interfering with the scripts from By The Pixel *@
+    @Scripts.Render("~/Scripts/bootstrapmodaljs")
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿@using G2B.Locator.Business
+
+<div id="divHeader" class="col-xs-12 locator-header">
+    <div class="row">
+
+        <div id="divKyrioLogo" class="col-xs-6 col-sm-4 col-lg-2 locator-header-mso-logo">
+            <a href="@Url.Action("StartOver", "ServiceRequest", ViewBag.SessionTimeoutRouteValues)">
+                <img alt="Affiliate Logo" src="@Url.Content(ViewBag.AffiliateImage)" class="img-responsive" />
+            </a>
+        </div>
+
+        @{
+            if (ViewBag.ProgressStep >= Convert.ToInt32(ProgressStep.ChooseService) && ViewBag.ProgressStep < Convert.ToInt32(ProgressStep.Confirmation))
+            {
+                <div class="col-xs-6 col-sm-4 col-sm-offset-4 col-lg-offset-0 col-lg-2 col-lg-push-8 text-right">
+                    @if (!ViewBag.IsSessionTimout)
+                    {
+                        <a id="aShowCart" onclick="ShowCart()" class="h4 locator-cursor-pointer locator-no-underline locator-header-cart">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">
+                            </span>
+                            <span>Shopping Cart</span>
+                            <span class="locator-header-cart-num-items">(@ViewBag.NumItemsInCart)</span>
+                        </a>
+                    }
+
+                    @if (ViewBag.DisplayTrackingId)
+                    {
+                        <div id="trackingId-header" class="text-right small locator-tracking-id">Tracking Id: @ViewBag.TrackingId</div>
+                    }
+                </div>
+            }
+        }
+
+        <div id="divProgress" data-step="@ViewBag.ProgressStep" class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-0 col-lg-8
+             @if (ViewBag.ProgressStep >= Convert.ToInt32(ProgressStep.ChooseService) && ViewBag.ProgressStep < Convert.ToInt32(ProgressStep.Confirmation)) { <text> col-lg-pull-2</text> }">
+
+            <div id="divProgressBackground" class="locator-progress-background img-rounded">
+                @{
+                    foreach (var step in ViewBag.StepsInformation)
+                    {
+                        var tempDivName = "divStep" + @step.Id;
+
+                        <div id="@tempDivName">
+                            @*<a href="@Url.Action("Index", @step.StepController)">*@
+                            <div name="stepOuter" class="col-xs-2 @step.OuterDivCssClass">
+                                <div name="stepInner" class="@step.InnerDivCssClass">                                    
+                                    <div class="hidden-xs locator-vertical-center">
+                                        <span name="stepIcon" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="hidden-xs locator-vertical-center">
+                                        <span name="stepName">@step.Name</span>
+                                    </div>
+                                    @*
+                                    <div class="visible-xs locator-vertical-center">
+                                        <span>@step.SmallName</span>
+                                    </div>
+                                    *@
+                                    <div class="visible-xs locator-vertical-center">
+                                        <span name="stepIcon" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            @*</a>*@
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@if (!ViewBag.IsSessionTimout)
+{
+    <div id="divCartPlaceHolder" class="col-xs-10 col-sm-8 col-md-6 col-lg-4 locator-cart" @ViewBag.CartHidden>
+        @{ Html.RenderAction("Index", "Cart"); }
+    </div>
+}

@@ -1,0 +1,48 @@
+﻿<div id="divFooter" class="col-xs-12 bg-primary locator-footer">
+
+    <div class="row">
+        <div id="divKyrioLogo" class="col-xs-6">
+            <a href="http://www.kyrio.com/" target="_blank">
+                <img alt="Kyrio Logo" src="@Url.Content("~/Content/Images/kyrio-logo-footer.png")" class="img-responsive"/>
+            </a>
+        </div>
+
+        <div id="divGoDaddySecureLogo" class="col-xs-6 text-right">
+            <span id="siteseal">
+                <script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=urfozFq2CUbaChnmAIa2C8HgqKbwRDUrtMtEqtnIBcGpYCmeCZDQt8o1JNpB"></script>
+            </span>
+        </div>
+    </div>
+
+    <div class="clearfix" aria-hidden="true"></div>
+
+    <div class="row">
+        <div id="divCopyrightInformation" class="col-xs-12">
+            <small>
+                Copyright Kyrio<sup>TM</sup>, Inc. @DateTime.Now.Year. All rights reserved.
+            </small>
+        </div>
+    </div>
+
+    <div class="clearfix" aria-hidden="true"></div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <span class="col-xs-12 col-sm-2 col-lg-1">
+                    <a class="locator-cursor-pointer small" id="aPrivacy">Privacy Policy</a>
+                </span>
+
+                <div class="clearfix visible-xs" aria-hidden="true"></div>
+
+                <span class="col-xs-12 col-sm-2 col-lg-1">
+                    <a class="locator-cursor-pointer small" id="aTermsOfUse">Terms of Use</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="divPrivacy" data-url='@Url.Action("PrivacyInformation", "Footer")'></div>
+<div id="divTermsOfUse" data-url='@Url.Action("TermsOfUse", "Footer")'></div>

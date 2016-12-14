@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Look for offers</title><!-- Modified By Kyrio -->
+    <meta name="description" content="Shop for broadband cable services in your area. See plans, prices, and schedule your service.">
+
+    <link rel="stylesheet" href="Content/css/app.css" type="text/css">
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="Content/css/ie.css" type="text/css">
+    <![endif]-->
+
+    <link rel="shortcut icon" href="Content/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="Content/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="Content/favicon/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="Content/favicon/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Content/favicon/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="Content/favicon/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Content/favicon/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Content/favicon/favicon-16.png">
+    <link rel="apple-touch-icon" href="Content/favicon/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Content/favicon/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Content/favicon/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="Content/favicon/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="Content/favicon/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="Content/favicon/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Content/favicon/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Content/favicon/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Content/favicon/favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="Content/favicon/favicon-144.png">
+    <meta name="msapplication-config" content="Content/favicon/browserconfig.xml">
+
+    <!-- This is added to allow us to use the bootstrap modal without interfering with the styles from By The Pixel -->
+    <link rel="stylesheet" href="Content/css/bootstrap-modal-only.css" type="text/css"><!-- Added By Kyrio -->
+</head>
+<body class="page--main">
+
+    <div class="media__loader--holder">
+        <div class="media__loader media__loader--inside"></div>
+        <div class="media__loader media__loader--outside"></div>
+    </div>
+    <header class="page__header overlay interaction--load">
+        <div class="overlay__media">
+            <video playsinline autoplay muted loop class="media__video" controls="false">
+                <source src="Content/media/videos/HeroBG.webm" type="video/webm">
+                <source src="Content/media/videos/HeroBG.mp4" type="video/mp4">
+            </video>
+            <div class="media__video--fallback"></div>
+        </div>
+        <nav class="row row--wide nav nav--main">
+            <div class="nav__brand">
+                <img src="Content/media/go2-broadband-logo.png" width="312" alt="Kyrio - GO2Broadband">
+                <p>Cable Service Locator</p>
+            </div>
+        </nav>
+        <div class="row header__container">
+            <div class="header__content column">
+                <h1 class="page__title">Shop for <span class="color--orange">broadband</span> cable services in your area.</h1>
+                <p>See plans, prices, and schedule your service.</p>
+            </div>
+            <div class="column">
+                <form action="/" class="form form--condensed" method="POST" id="frmServiceRequest"><!-- Modified By Kyrio -->
+                    <div class="row form__row">
+                        <input type="text" class="form__input" name="RequestAddress.AddressLine" id="address_1"><!-- Modified By Kyrio -->
+                        <label for="address_1" class="form__label">Enter your street address</label>                        
+                        <span class="field-validation-valid locator-validation-error" data-valmsg-for="RequestAddress.AddressLine" data-valmsg-replace="true"></span><!-- Added By Kyrio -->
+                    </div>
+                    <div class="row form__row">
+                        <input type="text" class="form__input" name="RequestAddress.Suite" id="address_2"><!-- Modified By Kyrio -->
+                        <label for="address_2" class="form__label">Address line 2</label>                        
+                        <span class="field-validation-valid locator-validation-error" data-valmsg-for="RequestAddress.Suite" data-valmsg-replace="true"></span><!-- Added By Kyrio -->
+                    </div>
+                    <div class="row form__row">
+                        <input type="text" class="form__input" name="RequestAddress.Zip" id="zip"><!-- Modified By Kyrio -->
+                        <label for="zip" class="form__label">Zip code</label>                        
+                        <span class="field-validation-valid locator-validation-error" data-valmsg-for="RequestAddress.Zip" data-valmsg-replace="true"></span><!-- Added By Kyrio -->
+                    </div>
+                    <!-- Modified By Kyrio
+                    <div class="row form__row">
+                        <select name="services" id="services" class="form__select">
+                            <option value="all">All Cable Services</option>
+                            <option value="some">Some Cable Services</option>
+                            <option value="none">No Cable Services</option>
+                        </select>
+                    </div>
+                    -->
+                    <div class="form__row">
+                        <div class="row form__group">
+                            <div class="group__item group__item--checkbox">
+                                <input type="checkbox" class="form__checkbox" name="PrivacyNotice" id="opt-in">
+                                <label for="opt-in" class="form__label">I would like to receive special offers and updates from my cable company.</label>
+                            </div>
+                            <div class="group__item group__item--button">
+                                <button class="button form__button button--square" data-locator-test="btnGo">Go</button><!-- Modified By Kyrio -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+    <section class="page__section interaction--load">
+        <header class="section__header">
+            <h2 class="section__title">Get Connected. <span class="title--emph">Faster</span></h2>
+        </header>
+        <section class="row section__content badge__collection">
+            <div class="badge">
+                <div class="badge__media">
+                    <img src="Content/media/search-graphic.png" alt="">
+                </div>
+                <header class="badge__header">
+                    <h3 class="badge__title">Search</h3>
+                </header>
+                <section class="badge__content">
+                    <p>Enter your address and zip code to find the cable provider that serves your area.</p><!-- Modified By Kyrio -->
+                </section>
+            </div>
+
+            <div class="badge__divider">
+                <img class="badge__divider--horiz" src="Content/media/badge-divider-horiz.png">
+                <img class="badge__divider--vert" src="Content/media/badge-divider-vert.png">
+            </div>
+
+            <div class="badge">
+                <div class="badge__media">
+                    <img src="Content/media/setup-graphic.png" alt="">
+                </div>
+                <header class="badge__header">
+                    <h3 class="badge__title">Setup</h3>
+                </header>
+                <section class="badge__content">
+                    <p>Compare plans and choose the one that fits your needs.</p>
+                </section>
+            </div>
+
+            <div class="badge__divider">
+                <img class="badge__divider--horiz" src="Content/media/badge-divider-horiz.png">
+                <img class="badge__divider--vert" src="Content/media/badge-divider-vert.png">
+            </div>
+
+            <div class="badge">
+                <div class="badge__media">
+                    <img src="Content/media/schedule-graphic.png" alt="">
+                </div>
+                <header class="badge__header">
+                    <h3 class="badge__title">Schedule</h3>
+                </header>
+                <section class="badge__content">
+                    <p>Select the date and time you’d like to schedule your installation.</p>
+                </section>
+            </div>
+        </section>
+    </section>
+    <section class="page__section overlay page__section--grid interaction--load" style="background-image: url('Content/media/background-2.jpg');">
+        <header class="section__header">
+            <h2 class="section__title">Every Cable Provider, <span class="title--emph">One Search</span></h2>
+        </header>
+
+        <section class="row row--wide grid" id="grid">
+
+            <div class="grid__item">
+                <img src="Content/media/providers/cox-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Cox Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/sudden-link-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Sudden Link Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/xfinity-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Xfinity Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/bright-house-logo.png" class="grid__media" alt="Kyrio Go2Broadband - BrightHouse Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/time-warner-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Time Warner Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/metro-cast-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Metro Cast Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/cable-one-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Cable One Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/bend-broadband-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Bend Broadband Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/armstrong-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Armstrong Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/mctv-logo.png" class="grid__media" alt="Kyrio Go2Broadband - MCTV Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/optimum-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Optimum Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/midco-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Midco Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/atlantic-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Atlantic Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/charter-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Charter Logo">
+            </div>
+
+            <div class="grid__item">
+                <img src="Content/media/providers/mediacom-logo.png" class="grid__media" alt="Kyrio Go2Broadband - Mediacom Logo">
+            </div>
+
+        </section>
+
+    </section>
+    <section class="page__section overlay page__section--form page__footer interaction--load">
+        <header class="row row--wide section__header section__header--align-left">
+            <h2 class="section__title">Questions?</h2>
+        </header>
+        <form action="" class="form form--condensed">
+            <div class="row row--wide">
+                <div class="column column--l-2-5">
+                    <div class="form__row">
+                        <input type="text" name class="form__input">
+                        <label for="name" class="form__label">Name</label>
+                    </div>
+                    <div class="form__row">
+                        <input type="email" name="email" class="form__input">
+                        <label for="email" class="form__label">Email</label>
+                    </div>
+                    <div class="form__row">
+                        <input type="text" name="captcha" class="form__input">
+                        <label for="captcha" class="form__label">2 + 10 = ?</label>
+                    </div>
+                </div>
+                <div class="column column--l-3-5">
+                    <div class="form__row">
+                        <textarea name="text" id="text" class="form__textarea"></textarea>
+                        <label for="text" class="form__label">Message</label>
+                    </div>
+                    <button class="button button--full-width form__button">Send</button>
+                </div>
+            </div>
+        </form>
+
+        <footer class="row--wide section__footer">
+            <p>Powered by</p>
+            <div class="footer__brand">
+                <img src="Content/media/kyrio-logo.png" width="212" alt="Kyrio - GO2Broadband">
+            </div>
+            <p>Copyright Kyrio(TM), Inc. 2016. All rights reserved.</p>
+            <p><a href="#modalPrivacy" data-toggle="modal">Privacy Policy</a> | <a href="#modalTermsOfUse" data-toggle="modal">Terms of Use</a></p><!-- Modified By Kyrio -->
+        </footer>
+
+    </section>
+
+    <div id="divPrivacy"><!-- Added By Kyrio -->
+        <!--@Html.Partial("Partial/_PrivacyInformation")-->
+        <div id="modalPrivacy" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalPrivacyLabel">   
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="bg-primary">
+
+                        <div class="modal-header">
+                            <button type="button" class="close locator-modal-close" data-dismiss="modal" aria-label="Close">
+                                <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                            </button>
+
+                            <div class="modal-title h3">Go2Broadband Privacy Policy</div>
+                        </div>
+
+                        <div class="modal-body">
+                            Go2Broadband Protects the Privacy of Your Personally Identifiable Information
+                            <br />
+                            <br />
+                            Go2Broadband understands the importance of safeguarding your personally identifiable information. We use the personally identifiable information you provide to us for a very narrow and specific purpose: to help you learn what cable services are available in your neighborhood, which cable company provides them, and to help you sign up for the services you choose.
+                            <br />
+                            <br />
+                            When you first ask Go2Broadband for information about cable services in your area, we need to know your physical address. We use your address to determine which cable company or companies provide services to your neighborhood. Cable companies use Go2Broadband to give you specific information about its cable service offers that are available at your address. Should you choose to place an order for cable services, you will then need to supply Go2Broadband with additional personally identifiable information.
+                            <br />
+                            <br />
+                            Our policy regarding this information is simple. Go2Broadband will not sell or rent any of the personally identifiable information you provide. In fact, Go2Broadband doesn't even store or use the personally identifiable information you supply EXCEPT to transfer it to the cable company that offers in your neighborhood the services you are interested in. And, unless you decide otherwise, the cable company can only use your information as necessary to furnish to you the services you have selected through Go2Broadband. If you would like, the cable company providing services to your address will send you information about other services that they make available to customers in your area. Check the box if you would like to be provided this information.
+                            <br />
+                            <br />
+                            We do collect aggregate statistical data, without names or specific street addresses, on the use of Go2Broadband. We do this in order to monitor customer traffic patterns and service use. This helps us administer the Go2Broadband service and improve its design and performance. We also keep a log of your broadband query and response for approximately one month for troubleshooting purposes.
+                            <br />
+                            <br />
+                            Copyright Kyrio, Inc. 2010. All rights reserved.
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divTermsOfUse"><!-- Added By Kyrio -->
+        <!--@Html.Partial("Partial/_TermsOfUse")-->
+        <div id="modalTermsOfUse" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalTermsOfUse">
+    
+        <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="bg-primary">
+                        
+                        <div class="modal-header">
+                            <button type="button" class="close locator-modal-close" data-dismiss="modal" aria-label="Close">
+                                <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                            </button>
+
+                            <div class="modal-title h3">Terms of Use</div>
+                        </div>
+
+                        <div class="modal-body">
+                            This Go2Broadband site is for use by individual consumers only, to identify which cable television system operator provides service to a particular address, and what specific services are available. Commercial use for any other purpose is prohibited. Kyrio reserves the right to restrict any use of this site that does not meet this policy.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/app.js" charset="utf-8"></script>
+
+    <!-- This is added to allow us to use our mvc server side validation rules, using the unobtrusive js valdation -->
+    <script src="Scripts/jquery-2.2.0.min.js" charset="utf-8"></script><!-- Added By Kyrio -->
+
+    <!-- This is added to allow us to use the bootstrap modal without interfering with the scripts from By The Pixel -->
+    <script src="Scripts/bootstrap.min-modal-only.js" charset="utf-8"></script><!-- Added By Kyrio -->
+
+</body>
+</html>
