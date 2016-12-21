@@ -81,7 +81,12 @@
             }
         }
     }
-
+        
+    &--complete {
+        color: $color-orange;
+        position: relative;
+    }
+    
     &__text {
         display: none;
         font-size: 8px;
