@@ -1,0 +1,125 @@
+/*-----------------------------------------------------------------------------------------------------------------------------------
+/* Header Styles
+/*
+/* This file contains all the [ LAYOUT & STYLES ] for the header partial view
+/* 
+/* [ OTHER SECTIONS ] - Progression Banner
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+.locator-tracking-id {    
+    color: @locator-color-white;    
+}
+
+.locator-header {
+    background-color: @locator-color-duskyblue;
+    padding: 24px 35px;
+}
+
+.locator-header-cart {    
+    color: @locator-color-white;    
+}
+
+.locator-header-cart:hover {
+    color: @locator-color-white !important;
+}
+
+.locator-header-cart-num-items {
+    color: @locator-color-orangeglow;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------------
+/* Progress Bar Styles
+/*
+/* [ LAYOUT & STYLES ] for the progress banner in the header partial view
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+.locator-progress-background {
+    height: 52px;
+    /*background-image: url("/Content/Images/background-stripe-grey.png");
+    background-repeat: repeat;*/
+    background-color: @locator-color-white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: @locator-color-lightgrey;
+    border-radius: 6px 6px;
+}
+
+.locator-progress-step-outer {
+    height: 50px;
+    padding: 0;
+    border-width: 5px 0;
+    border-style: solid;
+    border-color: transparent;
+}
+
+.locator-progress-step-inner {
+    height: 40px;
+    text-align: center;    
+    padding: 5px 0;
+    border-width: 1px 0.5px;
+    border-style: solid;
+    border-color: @locator-color-lightgrey;
+}
+
+.locator-progress-step-outer-left-bookend {
+    border-left-width: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.locator-progress-step-outer-right-bookend {
+    border-right-width: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.locator-progress-step-outer-active {
+    border-style: solid;
+    border-color: @locator-color-orangeglow;
+}
+
+.locator-progress-step-outer-complete {
+    border-style: solid;
+    border-color: @locator-color-duskyblue;
+    /*border-image-source: url("../Images/background-stripe-blue.png");    
+    border-image-width: 15px 0 15px 0;
+    border-image-slice: 20;*/
+    /*border-image: repeating-linear-gradient(-45deg, #1D4A5D, #1D4A5D 1%, #3F6575 1%, #3F6575 10%) 15;
+    border-radius: 10px 10px;*/
+    /*border-image: repeating-linear-gradient(      
+      -45deg,
+      #1D4A5D,
+      #1D4A5D 1.5px,
+      #3F6575 1.5px,
+      #3F6575 5px
+    ) 15;
+
+    border-radius: 20px;
+
+    overflow: hidden;*/
+}
+
+.locator-progress-step-inner-active {
+    background-color: @locator-color-orangeglow-10;
+}
+
+.locator-progress-step-inner-complete {
+    background-color: @locator-color-white;
+}
+
+.locator-progress-step-glyphicon {
+    font-size: @locator-glyphicon-size !important;
+}
+
+.locator-progress-step-glyphicon-inactive {
+    .locator-progress-step-glyphicon;
+    color: @locator-color-lightgrey;
+}
+
+.locator-progress-step-glyphicon-active {
+    .locator-progress-step-glyphicon;
+    color: @locator-color-duskyblue;
+}
+
+.locator-progress-step-glyphicon-complete {
+    .locator-progress-step-glyphicon;
+    color: @locator-color-electricgreen;
+}

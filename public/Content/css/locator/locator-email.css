@@ -1,0 +1,20 @@
+/*-----------------------------------------------------------------------------------------------------------------------------------
+/* Email Styles
+/*
+/* This file contains all the [ LAYOUT & STYLES ] for the
+/*      Email partial view
+/*
+/* This is used for testing as the email will have to have inline styles for production
+/*---------------------------------------------------------------------------------------------------------------------------------*/
+.locator-email-final-message {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.locator-height-for-email {
+    min-height: 400px;
+}
+
+.locator-outlook-fix {
+    margin: 50px;
+}

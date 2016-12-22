@@ -1,0 +1,102 @@
+﻿@using G2B.Locator.AppStart
+@using G2B.Locator.Business
+
+<!DOCTYPE html>
+
+<html>
+
+<head id="headMaster">
+
+    <!-- Set the encoding to UTF-8 -->
+    <meta charset="utf-8" />
+
+    <!-- Tells IE to use it's Edge rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Ensures proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- This line allows sub pages to omit the Header section -->
+    @RenderSection("head", false)
+
+    @{
+        var action = ViewContext.RouteData.Values["action"].ToString();
+    }
+    
+    <!-- Register the stylesheets -->
+    @if (string.Equals(action, "Print", StringComparison.OrdinalIgnoreCase))
+    {
+        <!-- Print style sheet links -->
+        <!-- The styles mentioned here applied to the printed page and not the web page due to teh bundles format -->
+        @Styles.RenderFormat(BundlesFormats.Print, "~/Content/css/locator/locatorprint")
+
+        <!-- This makes the Html page look like the print page, this applies to the web page and not the print preview -->
+        @Styles.Render("~/Content/css/locator/locatorprint")
+    }
+    else if (string.Equals(action, Email.EmailViewName, StringComparison.OrdinalIgnoreCase))
+    {
+        <!-- Email style sheet links : This should not be needed - but for now it seems to be -->
+        @Styles.RenderFormat(BundlesFormats.Email, "~/Content/css/locator/locatoremail")
+    }
+    else
+    {
+        <!-- Normal browser style sheet links -->
+        @Styles.Render("~/Content/css/bootstrapcss")
+        @Styles.Render("~/Content/css/locator/locatorless")
+        @Styles.Render("~/Content/datetimepickerless")
+    }
+
+    <!-- Add the Font Awesome glyph icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Add the roboto font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700,900" rel="stylesheet" type="text/css">
+
+    <title>@ViewBag.Title</title>
+
+</head>
+
+<body id="bodyMaster">
+
+    <div id="divMaster" class="container-fluid">
+
+        @if (!string.Equals(action, Email.EmailViewName, StringComparison.OrdinalIgnoreCase)
+            && !string.Equals(action, "Print", StringComparison.OrdinalIgnoreCase))
+        {
+            <div id="divMasterHeader" class="row">
+                @{ Html.RenderAction("Index", "Header"); }
+            </div>
+        }
+
+        <div id="divMasterBody" class="row">
+            @RenderBody()
+        </div>
+
+        @if (!string.Equals(action, Email.EmailViewName, StringComparison.OrdinalIgnoreCase)
+            && !string.Equals(action, "Print", StringComparison.OrdinalIgnoreCase))
+        {
+            <div id="divMasterFooter" class="row">
+                @{ Html.RenderPartial("~/Views/Shared/_Footer.cshtml"); }
+            </div>
+        }
+
+    </div>
+
+    @if (!string.Equals(action, Email.EmailViewName, StringComparison.OrdinalIgnoreCase))
+    {
+        <!-- Register the scripts-->
+        @Scripts.Render("~/Scripts/jquery")
+        @Scripts.Render("~/Scripts/bootstrapjs")
+        @Scripts.Render("~/Scripts/locatorjs")
+        @Scripts.Render("~/Scripts/datetimepickerjs")
+
+        @* TODO: Do something better here than a simple message *@
+        <noscript>Get a better browser</noscript>
+
+        <div id="divCartEmptied"></div>
+        <div id="divAjaxError"></div>
+    }
+
+</body>
+
+</html>
