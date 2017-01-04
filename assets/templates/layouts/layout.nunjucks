@@ -32,6 +32,6 @@
     </head>
     <body class="page--{{ page }}">
         {% block content %}{% endblock %}
-        <script src="{{ asset_location }}js/app.js" charset="utf-8"></script>
+        <script src="{{ script_location }}app.js" charset="utf-8"></script>
     </body>
 </html>
