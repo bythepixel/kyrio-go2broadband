@@ -4,7 +4,7 @@ export default {
     // Input directory
     src : routes.src + "/sass",
     // Output directory
-    dest: routes.dest + "/css",
+    dest: routes.dest + "/Content/css",
     extension: "scss",
     support: {
         // Autoprefixer config to automatically match
