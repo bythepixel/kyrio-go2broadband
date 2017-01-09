@@ -114,7 +114,6 @@ const inViewport = (element, start) => {
  * @return {void}
  */
 const applyClassOnScroll = (item, active) => {
-    return; // TODO: re-enable once we wire in the body
     const scrollEvent = () => {
         // If is in viewport and doesn't have active class
         if (inViewport(item, 0.7)) {
