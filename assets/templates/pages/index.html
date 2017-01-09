@@ -1,4 +1,5 @@
-{% set asset_location = "" %}
+{% set asset_location = "Content/" %}
+{% set script_location = "Scripts/" %}
 {% set page = "main" %}
 {% extends "layout.nunjucks" %}
 {% import "_macros/provider-grid.nunjucks" as providerGrid %}
@@ -81,8 +82,8 @@
         </div>
 
         <div class="badge__divider">
-            <img class="badge__divider--horiz" src="media/badge-divider-horiz.png">
-            <img class="badge__divider--vert"src="media/badge-divider-vert.png">
+            <img class="badge__divider--horiz" src="{{ asset_location }}media/badge-divider-horiz.png">
+            <img class="badge__divider--vert"src="{{ asset_location }}media/badge-divider-vert.png">
         </div>
 
         <div class="badge">
@@ -98,8 +99,8 @@
         </div>
 
         <div class="badge__divider">
-            <img class="badge__divider--horiz" src="media/badge-divider-horiz.png">
-            <img class="badge__divider--vert"src="media/badge-divider-vert.png">
+            <img class="badge__divider--horiz" src="{{ asset_location }}media/badge-divider-horiz.png">
+            <img class="badge__divider--vert"src="{{ asset_location }}media/badge-divider-vert.png">
         </div>
 
         <div class="badge">
