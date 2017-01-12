@@ -153,12 +153,12 @@ const formCheckboxValReplace = () => {
         }
 
         // Add submit listener to form
-        form.addEventListener('submit', (event) => {
+        /*form.addEventListener('submit', (event) => {
             // Prevent the form from submitting
             event.preventDefault();
             // Map the checkboxes to true/false values and re-submit
             mapCheckboxBoolValues(event.target, checkboxes);
-        });
+        });*/
     }
 };
 
