@@ -4,7 +4,7 @@
 <section class="row row--wide grid" id="grid">
     {% for image in providerImages.logos %}
     <div class="grid__item">
-        <img src="Content/{{ mediaPath }}{{ image.src }}" class="grid__media" alt="{{ image.alt }}">
+        <img src="../Content/{{ mediaPath }}{{ image.src }}" class="grid__media" alt="{{ image.alt }}">
     </div>
     {% endfor %}
 </section>

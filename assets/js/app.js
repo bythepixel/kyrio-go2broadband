@@ -19,7 +19,16 @@ formHandling();
 formCheckboxValReplace();
 // Run page init
 pageInit();
+
 // Hook up styleSelect
-styleSelect('.form__select');
+const selects = document.querySelectorAll('.form__select');
+if(selects.length)
+{
+    styleSelect('.form__select');
+}
+
 // Run datePicker
-datePicker('.form__date');
+const dates = document.querySelectorAll('.form__date')
+{
+    datePicker('.form__date');
+}

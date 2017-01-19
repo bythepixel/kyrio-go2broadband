@@ -1,4 +1,5 @@
-{% set asset_location = "../" %}
+{% set asset_location = "../Content/" %}
+{% set script_location = "../Scripts/" %}
 {% set page = "inner" %}
 {% extends "layout.nunjucks" %}
 {% import "_macros/provider-grid.nunjucks" as providerGrid %}
@@ -175,7 +176,7 @@
     </button>
 </form>
 <section class="page__section overlay overlay--light page__section--grid interaction--load">
-    {{ providerGrid.grid("../media/providers/grey/") }}
+    {{ providerGrid.grid("media/providers/") }}
 </section>
 <section class="page__section overlay page__footer interaction--load">
 {% include "_partials/page-footer.nunjucks" %}
