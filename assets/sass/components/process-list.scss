@@ -105,13 +105,11 @@
             // margin-top: 0.2rem;
             font-size: 1.6rem;
         }
-    }
-    
-    &__cart-text
-    {
-        display: none;
-        font-size: 8px;
-        font-family: $font-emph;
+        
+        &--cart
+        {
+            margin:0px
+        }
     }
 
     &__img {
